@@ -4,7 +4,7 @@ Ubuntu Core 14.04 + LXDE desktop + Firefox browser with a TightVNC server. Runs 
 
 Build
 -----
-Include a file called "password" with the default password for TightVNC. This must be at least 8 characters.
+Include password.txt with the password for TightVNC (by default this is "password"). This must be at least 8 characters.
 
 Usage
 -----
