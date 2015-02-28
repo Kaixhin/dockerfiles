@@ -11,7 +11,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 # CUDA version
 ENV CUDA_MAJOR=6.5 \
   CUDA_VERSION=6.5.14 \
-  CUDA_MAJOR_U=6_5 \
+  CUDA_MAJOR_U=6_5
 # Location of CUDA run file
 ENV CUDA_RUN http://developer.download.nvidia.com/compute/cuda/${CUDA_MAJOR_U}/rel/installers/cuda_${CUDA_VERSION}_linux_64.run
 # Download run file, make executable and extract
