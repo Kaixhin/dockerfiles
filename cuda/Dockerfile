@@ -10,17 +10,15 @@ RUN apt-get update && apt-get install -y \
   wget
 # CUDA version
 # TODO Extract from nvcc --version on host
-COPY cuda_version.sh ./
-# Use bash as Docker uses sh
-RUN source ./cuda_version.sh
-# ?????????????????????
+ENV CUDA_MAJOR 6.5
+ENV CUDA_VERSION 6.5.14
+ENV CUDA_MAJOR_U 6_5
 # Location of CUDA run file
 ENV CUDA_RUN http://developer.download.nvidia.com/compute/cuda/${CUDA_MAJOR_U}/rel/installers/cuda_${CUDA_VERSION}_linux_64.run
 # Download run file into /opt and make executable
 RUN wget ${CUDA_RUN} && chmod +x cuda_*_linux_64.run
 # Extract separate installers
-# TODO Find out why WORKDIR can't be used
-RUN ./cuda_*_linux_64.run -extract=${WORKDIR}
+RUN ./cuda_*_linux_64.run -extract=`pwd`
 # Install CUDA drivers (silent, no kernel) - as the kernel is shared the host and container must correspond
 RUN ./NVIDIA-Linux-x86_64-*.run -s --no-kernel-module
 # INSTALL CUDA toolkit (silent)
@@ -31,5 +29,5 @@ ENV PATH /usr/local/cuda/bin:${PATH}
 RUN echo "/usr/local/cuda/lib64" >> /etc/ld.so.conf && ldconfig
 # Cleanup
 RUN rm -rf *
-# Default command
-CMD ["/bin/bash"]
+# Reset working directory
+WORKDIR /
