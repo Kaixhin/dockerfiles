@@ -8,17 +8,13 @@ WORKDIR /tmp
 RUN apt-get update && apt-get install -y \
   build-essential \
   wget
-# CUDA version
-# TODO Extract from nvcc --version on host
-ENV CUDA_MAJOR 6.5
-ENV CUDA_VERSION 6.5.14
-ENV CUDA_MAJOR_U 6_5
-# Location of CUDA run file
-ENV CUDA_RUN http://developer.download.nvidia.com/compute/cuda/${CUDA_MAJOR_U}/rel/installers/cuda_${CUDA_VERSION}_linux_64.run
-# Download run file into /opt and make executable
-RUN wget ${CUDA_RUN} && chmod +x cuda_*_linux_64.run
-# Extract separate installers
-RUN ./cuda_*_linux_64.run -extract=`pwd`
+# CUDA version and location of run file
+ENV CUDA_MAJOR=6.5 \
+  CUDA_VERSION=6.5.14 \
+  CUDA_MAJOR_U=6_5 \
+  CUDA_RUN=http://developer.download.nvidia.com/compute/cuda/${CUDA_MAJOR_U}/rel/installers/cuda_${CUDA_VERSION}_linux_64.run
+# Download run file, make executable and extract
+RUN wget ${CUDA_RUN} && chmod +x cuda_*_linux_64.run && ./cuda_*_linux_64.run -extract=`pwd`
 # Install CUDA drivers (silent, no kernel) - as the kernel is shared the host and container must correspond
 RUN ./NVIDIA-Linux-x86_64-*.run -s --no-kernel-module
 # INSTALL CUDA toolkit (silent)
