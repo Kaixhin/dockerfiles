@@ -1,6 +1,6 @@
 # Start with Ubuntu base image
 FROM ubuntu:14.04
-MAINTAINER kaixhin <design@kaixhin.com>
+MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Set /tmp as working directory
 WORKDIR /tmp
