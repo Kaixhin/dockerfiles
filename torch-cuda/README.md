@@ -1,6 +1,6 @@
 torch
 =====
-Ubuntu Core 14.04 + CUDA 6.5.14 + Torch7 (including iTorch). Requires the host has the corresponding CUDA drivers installed for the kernel module.
+Ubuntu Core 14.04 + CUDA 6.5 + Torch7 (including iTorch). Requires the host has the corresponding CUDA drivers installed for the kernel module.
 
 Usage
 -----
