@@ -1,5 +1,5 @@
-# Start with Ubuntu base image
-FROM ubuntu:14.04
+# Start with CUDA base image
+FROM kaixhin/cuda
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install curl and dependencies for iTorch
