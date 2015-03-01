@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
   wget
 # CUDA version
 ENV CUDA_MAJOR=6.5 \
-  CUDA_VERSION=6.5.14 \
+  CUDA_VERSION=6.5.19 \
   CUDA_MAJOR_U=6_5
 
 # The next few steps are combined to prevent storing the installers
