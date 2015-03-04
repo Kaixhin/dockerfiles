@@ -1,5 +1,4 @@
 # Start with Ubuntu base image
-# As the kernel is shared the host and container must correspond
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
@@ -7,12 +6,11 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 RUN apt-get update && apt-get install -y \
   build-essential \
   wget
-# CUDA version
+# CUDA version - as the kernel is shared the host and container must correspond
 ENV CUDA_MAJOR=6.5 \
   CUDA_VERSION=6.5.19 \
   CUDA_MAJOR_U=6_5
 
-# The next few steps are combined to prevent storing the installers
 # Change to the /tmp directory
 RUN cd /tmp && \
 # Download run file
