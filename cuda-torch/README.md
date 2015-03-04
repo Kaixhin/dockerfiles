@@ -1,5 +1,5 @@
-torch
-=====
+cuda-torch
+==========
 Ubuntu Core 14.04 + CUDA 6.5.19 + Torch7 (including iTorch). Requires the host has the corresponding CUDA drivers installed for the kernel module.
 
 Usage
