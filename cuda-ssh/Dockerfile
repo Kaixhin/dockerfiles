@@ -16,6 +16,8 @@ RUN mkdir /var/run/sshd && \
   rm password.txt
 # Expose SSH port
 EXPOSE 22
+# Add CUDA back to path during SSH
+RUN echo "export PATH=$PATH:/usr/local/cuda/bin" >> /etc/profile
 
 # Run SSH server without detaching
 CMD ["/usr/sbin/sshd", "-D"]
