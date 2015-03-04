@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y openssh-server
 # Set password
 COPY password.txt .
 RUN mkdir /var/run/sshd && \
-  echo 'root:`cat password.txt`' | chpasswd && \
+  echo "root:`cat password.txt`" | chpasswd && \
   # Allow root login with password
   sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
   # Prevent user being kicked off after login
@@ -18,4 +18,4 @@ RUN mkdir /var/run/sshd && \
 EXPOSE 22
 
 # Run SSH server without detaching
-CMD ["sshd", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
