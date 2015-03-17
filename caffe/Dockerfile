@@ -2,8 +2,9 @@
 FROM kaixhin/cuda
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install dependencies
+# Install git and dependencies
 RUN apt-get update && apt-get install -y \
+  git \
   libatlas-base-dev \
   libatlas-dev \
   libboost-all-dev \
