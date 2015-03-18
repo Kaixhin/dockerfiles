@@ -1,2 +1,2 @@
-# Ignore DiGiTS
-digits
+# Ignore cuDNN
+digits/cudnn*

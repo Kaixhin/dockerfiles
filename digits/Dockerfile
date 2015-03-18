@@ -1,0 +1,54 @@
+# Start with CUDA base image
+FROM kaixhin/cuda
+MAINTAINER Kai Arulkumaran <design@kaixhin.com>
+
+# Move cuDNN over and extract
+ADD cudnn*.tgz root/
+# Install cuDNN
+RUN cd root/cudnn* && \
+  cp cudnn.h /usr/local/include/ && \
+  cp -d libcudnn* /usr/local/lib/
+
+# Install git, bc and dependencies
+RUN apt-get update && apt-get install -y \
+  git \
+  bc \
+  libatlas-base-dev \
+  libatlas-dev \
+  libboost-all-dev \
+  libopencv-dev \
+  libprotobuf-dev \
+  libgoogle-glog-dev \
+  libgflags-dev \
+  protobuf-compiler \
+  libhdf5-dev \
+  libleveldb-dev \
+  liblmdb-dev \
+  libsnappy-dev \
+  python-pip \
+  gfortran
+
+# Clone NVIDIA Caffe repo and move into it
+RUN cd root && git clone --branch v0.10.0 https://github.com/NVIDIA/caffe.git && cd caffe && \
+# Install python dependencies
+  cd python && \
+  for req in $(cat requirements.txt); do pip install $req; done && \
+  cd .. && \
+# Make
+  cp Makefile.config.example Makefile.config && \
+  make all && \
+  make py && \
+# Set environment variables
+  export CAFFE_HOME=/root/caffe
+
+# Clone DiGiTS and move into it
+RUN cd root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digits && \
+# Install dependencies
+  apt-get install -y graphviz gunicorn && \
+# Install python dependencies
+  for req in $(cat requirements.txt); do pip install $req; done
+
+# Expose development server port
+EXPOSE 5000
+# Set ~/digits as working directory
+WORKDIR /root/digits
