@@ -22,10 +22,8 @@ RUN apt-get update && apt-get install -y \
 
 # Clone Caffe repo and move into it
 RUN cd root && git clone https://github.com/BVLC/caffe && cd caffe && \
-# Make and test
+# Make
   cp Makefile.config.example Makefile.config && \
-  make all && \
-  make test && \
-  make runtest
+  make all
 # Set ~/caffe as working directory
 WORKDIR /root/caffe
