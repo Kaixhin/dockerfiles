@@ -16,9 +16,7 @@ RUN apt-get update && apt-get install -y \
   libhdf5-dev \
   libleveldb-dev \
   liblmdb-dev \
-  libsnappy-dev \
-  python-pip \
-  gfortran
+  libsnappy-dev
 
 # Clone Caffe repo and move into it
 RUN cd root && git clone https://github.com/BVLC/caffe && cd caffe && \
