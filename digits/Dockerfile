@@ -37,9 +37,9 @@ RUN cd root && git clone --branch v0.10.0 https://github.com/NVIDIA/caffe.git &&
 # Make
   cp Makefile.config.example Makefile.config && \
   make all && \
-  make py && \
-# Set environment variables
-  export CAFFE_HOME=/root/caffe
+  make py
+# Set environment variable
+ENV CAFFE_HOME /root/caffe
 
 # Clone DiGiTS and move into it
 RUN cd root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digits && \
@@ -48,7 +48,9 @@ RUN cd root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digit
 # Install python dependencies
   for req in $(cat requirements.txt); do pip install $req; done
 
-# Expose development server port
-EXPOSE 5000
+# Expose server port
+EXPOSE 8080
 # Set ~/digits as working directory
 WORKDIR /root/digits
+# Start server
+CMD ["/root/digits/digits-server"]

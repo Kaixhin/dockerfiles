@@ -14,6 +14,6 @@ With 4 GPUs this would also have to include `--device /dev/nvidia1:/dev/nvidia1 
 
 The default password should be changed. To do so start up a container and then run `docker exec <id> bash -c "echo -e '<password>\n<password>\nn' | vncpasswd"`.
 
-For automatically mapping a VNC port use `docker run -dP kaixhin/cuda-vnc` and `docker port <id>` to retrieve the port.
-For specifying the port manually use `docker run -d -p <port>:5901 kaixhin/cuda-vnc`.
-The shell can be entered as usual using `docker run -it kaixhin/cuda-vnc bash`.
+For automatically mapping a VNC port use `docker run -dP <nvidia_devices> kaixhin/cuda-vnc` and `docker port <id>` to retrieve the port.
+For specifying the port manually use `docker run -d -p <port>:5901 <nvidia_devices> kaixhin/cuda-vnc`.
+The shell can be entered as usual using `docker run -it <nvidia_devices> kaixhin/cuda-vnc bash`.
