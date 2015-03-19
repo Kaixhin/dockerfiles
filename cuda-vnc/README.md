@@ -1,6 +1,6 @@
 cuda-vnc
 ========
-Ubuntu Core 14.04 + CUDA 6.5.19 + LXDE desktop + Firefox browser + TightVNC server. Requires the host has the corresponding CUDA drivers installed for the kernel module. Runs as a daemon by default by using tail. 
+Ubuntu Core 14.04 + CUDA 7.0.28 + LXDE desktop + Firefox browser + TightVNC server. Requires the host has the corresponding CUDA drivers installed for the kernel module. Runs as a daemon by default by using tail. 
 
 Build
 -----

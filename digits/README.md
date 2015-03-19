@@ -1,6 +1,6 @@
 digits
 ======
-Ubuntu Core 14.04 + CUDA 6.5.19 + PyCaffe + DiGiTS. Requires the host has the corresponding CUDA drivers installed for the kernel module.
+Ubuntu Core 14.04 + CUDA 7.0.28 + Pycaffe + DiGiTS. Requires the host has the corresponding CUDA drivers installed for the kernel module.
 
 Build
 -----
