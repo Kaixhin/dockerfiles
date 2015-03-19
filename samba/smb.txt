@@ -1,0 +1,9 @@
+
+[data]
+path = /data
+available = yes
+valid users = root
+read only = no
+browseable = yes
+public = yes
+writeable = yes
