@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y samba
 # Copy config files
 COPY *.txt /
 # Set password
-RUN echo -e "`cat password.txt`\n`cat password.txt`\n" > smbpasswd -s && \
+RUN cat password.txt password.txt | smbpasswd -sa root && \
   # Make directory to share
   mkdir /data && \
   # Adjust samba configuration
