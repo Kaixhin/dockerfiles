@@ -41,7 +41,7 @@ RUN cd root && git clone --branch v0.10.0 https://github.com/NVIDIA/caffe.git &&
 # Set environment variable
 ENV CAFFE_HOME /root/caffe
 
-# Clone DiGiTS and move into it
+# Clone DIGITS and move into it
 RUN cd root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digits && \
 # Install dependencies
   apt-get install -y graphviz gunicorn && \
