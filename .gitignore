@@ -1,2 +1,2 @@
 # Ignore cuDNN
-digits/cudnn*
+cuda-digits/cudnn*
