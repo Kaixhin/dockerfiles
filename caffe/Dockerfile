@@ -26,6 +26,6 @@ RUN cd root && git clone https://github.com/BVLC/caffe.git && cd caffe && \
 # Enable CPU-only
   sed -i 's/# CPU_ONLY/CPU_ONLY/g' Makefile.config && \
 # Make
-  make all
+  make -j"$(nproc)" all
 # Set ~/caffe as working directory
 WORKDIR /root/caffe

@@ -37,8 +37,8 @@ RUN cd root && git clone --branch v0.11.0 https://github.com/NVIDIA/caffe.git &&
 # Copy Makefile
   cp Makefile.config.example Makefile.config && \
 # Make
-  make all && \
-  make py
+  make -j"$(nproc)" all && \
+  make -j"$(nproc)" py
 # Set environment variable
 ENV CAFFE_HOME /root/caffe
 

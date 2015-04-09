@@ -24,6 +24,6 @@ RUN cd root && git clone https://github.com/BVLC/caffe.git && cd caffe && \
 # Copy Makefile
   cp Makefile.config.example Makefile.config && \
 # Make
-  make all
+  make -j"$(nproc)" all
 # Set ~/caffe as working directory
 WORKDIR /root/caffe
