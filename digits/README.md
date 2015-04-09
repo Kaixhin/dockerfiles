@@ -1,6 +1,6 @@
 digits
 ======
-Ubuntu Core 14.04 + Pycaffe + DIGITS.
+Ubuntu Core 14.04 + Pycaffe + DIGITS (CPU-only).
 
 Usage
 -----
