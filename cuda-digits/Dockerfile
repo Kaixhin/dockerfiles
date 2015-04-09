@@ -2,13 +2,6 @@
 FROM kaixhin/cuda
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Move cuDNN over and extract
-ADD cudnn*.tgz root/
-# Install cuDNN
-RUN cd root/cudnn* && \
-  cp cudnn.h /usr/local/include/ && \
-  cp -d libcudnn* /usr/local/lib/
-
 # Install git, bc and dependencies
 RUN apt-get update && apt-get install -y \
   git \
@@ -36,6 +29,8 @@ RUN cd root && git clone --branch v0.11.0 https://github.com/NVIDIA/caffe.git &&
   cd .. && \
 # Copy Makefile
   cp Makefile.config.example Makefile.config && \
+# Disable cuDNN
+  sed -i 's/USE_CUDNN/# USE_CUDNN/g' Makefile.config && \
 # Make
   make all && \
   make py
