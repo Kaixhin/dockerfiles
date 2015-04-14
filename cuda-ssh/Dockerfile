@@ -2,10 +2,10 @@
 FROM kaixhin/cuda
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install OpenSSH, X server and libgtk (for NVIDIA visual profiler)
+# Install OpenSSH, X server and libgtk (for NVIDIA Visual Profiler)
 RUN apt-get update && apt-get install -y \
-  openssh-server && \
-  xdm && \
+  openssh-server \
+  xdm \
   libgtk2.0-0
 # Set password
 COPY password.txt .
