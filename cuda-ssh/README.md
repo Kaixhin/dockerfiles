@@ -1,6 +1,6 @@
 cuda-ssh
 ========
-Ubuntu Core 14.04 + CUDA 7.0.28 + SSH server. Requires the host has the corresponding CUDA drivers (v. 346.46) installed for the kernel module.
+Ubuntu Core 14.04 + CUDA 7.0.28 + SSH server + X server (for nvvp). Requires the host has the corresponding CUDA drivers (v. 346.46) installed for the kernel module.
 
 Build
 -----
@@ -17,3 +17,5 @@ The default password should be changed. To do so start up a container and then r
 For automatically mapping a SSH port use `docker run -dP <nvidia_devices> kaixhin/cuda-ssh` and `docker port <id>` to retrieve the port.
 For specifying the port manually use `docker run -d -p <port>:22 <nvidia_devices> kaixhin/cuda-ssh`.
 The shell can be entered as usual using `docker run -it <nvidia_devices> kaixhin/cuda-ssh bash`.
+
+The NVIDIA Visual Profiler can be accessed with an X client, after having run ssh with the `-X` flag.

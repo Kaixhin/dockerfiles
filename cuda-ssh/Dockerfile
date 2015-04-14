@@ -2,8 +2,11 @@
 FROM kaixhin/cuda
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install OpenSSH
-RUN apt-get update && apt-get install -y openssh-server
+# Install OpenSSH, X server and libgtk (for NVIDIA visual profiler)
+RUN apt-get update && apt-get install -y \
+  openssh-server && \
+  xdm && \
+  libgtk2.0-0
 # Set password
 COPY password.txt .
 RUN mkdir /var/run/sshd && \
