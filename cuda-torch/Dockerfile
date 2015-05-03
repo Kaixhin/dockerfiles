@@ -13,3 +13,6 @@ RUN git clone https://github.com/torch/distro.git ~/torch --recursive
 RUN cd ~/torch; ./install.sh
 # Set ~/torch as working directory
 WORKDIR /root/torch
+
+# Run Torch7 interactively
+CMD ["th", "-i"]
