@@ -12,3 +12,5 @@ Some builds based on certain software have builds that are triggered on schedule
 - Caffe (weekly)
 - DIGITS (daily)
 - Torch (weekly)
+
+If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).

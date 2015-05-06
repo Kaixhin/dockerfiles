@@ -9,3 +9,7 @@ The default password ("password") should be changed. To do so start up a contain
 For automatically mapping a SSH port use `docker run -dP kaixhin/sshx` and `docker port <id>` to retrieve the port.
 For specifying the port manually use `docker run -d -p <port>:22 kaixhin/sshx`.
 The shell can be entered as usual using `docker run -it kaixhin/sshx bash`.
+
+Citation
+--------
+If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
