@@ -4,7 +4,7 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install build-essential and git
 Run apt-get update && apt-get install -y \
-  build-essential && \
+  build-essential \
   git
 
 # Clone neon repo and move into it
