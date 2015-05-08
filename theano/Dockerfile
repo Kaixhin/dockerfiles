@@ -14,5 +14,5 @@ RUN apt-get update && apt-get install -y \
   python-numpy \
   python-scipy
 
-# Install Theano
-RUN pip install Theano
+# Install bleeding-edge Theano
+RUN pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
