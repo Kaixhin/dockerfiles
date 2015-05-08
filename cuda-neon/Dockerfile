@@ -10,8 +10,8 @@ Run apt-get update && apt-get install -y \
   python-pip \
   python-numpy
 
-# Install PyCUDA
-RUN pip install pycuda
+# Install PyCUDA and six (upgrade)
+RUN pip install pycuda six --upgrade
 
 # Clone MaxAs repo and move into it
 RUN cd root && git clone https://github.com/NervanaSystems/maxas.git && cd maxas && \
@@ -34,6 +34,3 @@ RUN cd root && git clone https://github.com/NervanaSystems/neon.git && cd neon &
   make -j"$(nproc)" install
 # Set ~/neon as working directory
 WORKDIR /root/neon
-
-# Run neon
-CMD ["neon"]
