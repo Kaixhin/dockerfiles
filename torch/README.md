@@ -1,6 +1,6 @@
 torch
 =====
-Ubuntu Core 14.04 + Torch7 (including iTorch).
+Ubuntu Core 14.04 + [Torch7](http://torch.ch/) (including iTorch).
 
 Usage
 -----

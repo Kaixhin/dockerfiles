@@ -1,6 +1,7 @@
 cuda-caffe
 ==========
-Ubuntu Core 14.04 + CUDA 7.0.28 + Caffe. Requires the host has the corresponding CUDA drivers (v. 346.46) installed for the kernel module.
+Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [Caffe](http://caffe.berkeleyvision.org/).
+Requires the host has the corresponding CUDA drivers (v. 346.46) installed for the kernel module.
 
 Usage
 -----

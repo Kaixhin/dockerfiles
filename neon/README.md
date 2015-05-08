@@ -1,6 +1,6 @@
 neon
 ====
-Ubuntu Core 14.04 + neon.
+Ubuntu Core 14.04 + [neon](http://neon.nervanasys.com/).
 
 Citation
 --------

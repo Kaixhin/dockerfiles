@@ -1,6 +1,6 @@
 vnc-ros
 =======
-Ubuntu Core 14.04 + LXDE desktop + Firefox browser + TightVNC server + ROS Indigo Desktop Full. Runs as a daemon by default by using tail.
+Ubuntu Core 14.04 + LXDE desktop + Firefox browser + TightVNC server + [ROS Indigo Desktop Full](http://www.ros.org/). Runs as a daemon by default by using tail.
 
 Build
 -----

@@ -1,6 +1,6 @@
 caffe
 =====
-Ubuntu Core 14.04 + Caffe.
+Ubuntu Core 14.04 + [Caffe](http://caffe.berkeleyvision.org/).
 
 Citation
 --------
