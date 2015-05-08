@@ -6,13 +6,13 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 RUN apt-get update && apt-get install -y \
   build-essential \
   git \
+  libatlas3gf-base \
+  libatlas-dev \
   python-dev \
   python-pip \
-  python-numpy
+  python-nose \
+  python-numpy \
+  python-scipy
 
-# Clone neon repo and move into it
-RUN cd root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
-# Make
-  make -j"$(nproc)" install
-# Set ~/neon as working directory
-WORKDIR /root/neon
+# Install Theano
+RUN pip install Theano

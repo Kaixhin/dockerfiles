@@ -3,15 +3,15 @@ FROM kaixhin/cuda
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, python-dev, pip and other dependencies
-Run apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
   git \
   libboost-all-dev \
   python-dev \
   python-pip \
   python-numpy
 
-# Install PyCUDA and six (upgrade)
-RUN pip install pycuda six --upgrade
+# Install PyCUDA and (upgrade) six
+RUN pip install --upgrade pycuda six
 
 # Clone MaxAs repo and move into it
 RUN cd root && git clone https://github.com/NervanaSystems/maxas.git && cd maxas && \
