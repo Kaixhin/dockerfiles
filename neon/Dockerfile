@@ -2,12 +2,13 @@
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install build-essential, git, pip and python-dev
+# Install build-essential, git, python-dev, pip and other dependencies
 Run apt-get update && apt-get install -y \
   build-essential \
   git \
+  python-dev \
   python-pip \
-  python-dev
+  python-numpy
 
 # Clone neon repo and move into it
 RUN cd root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
