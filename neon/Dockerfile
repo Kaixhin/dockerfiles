@@ -16,6 +16,3 @@ RUN cd root && git clone https://github.com/NervanaSystems/neon.git && cd neon &
   make -j"$(nproc)" install
 # Set ~/neon as working directory
 WORKDIR /root/neon
-
-# Run neon
-CMD ["neon"]
