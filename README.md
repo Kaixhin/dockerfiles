@@ -11,6 +11,7 @@ Some builds based on certain software have builds that are triggered on schedule
 
 - [Caffe](https://github.com/BVLC/caffe) (weekly)
 - [DIGITS](https://github.com/NVIDIA/DIGITS) (daily)
+- [neon](https://github.com/NervanaSystems/neon) (daily)
 - [Theano](https://github.com/Theano/Theano) (daily)
 - [Torch](https://github.com/torch/distro) (weekly)
 
