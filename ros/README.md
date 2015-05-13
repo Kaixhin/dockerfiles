@@ -1,6 +1,6 @@
 ros
 ===
-Ubuntu Core 14.04 + [ROS Indigo Base](http://www.ros.org/).
+Ubuntu Core 14.04 + [ROS Jade Base](http://www.ros.org/).
 
 Citation
 --------
