@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -y \
   git \
   libboost-all-dev \
   python-dev \
-  python-pip \
-  python-numpy
+  python-numpy \
+  python-pip
 
 # Install PyCUDA and (upgrade) six
 RUN pip install --upgrade pycuda six
