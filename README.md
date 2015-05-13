@@ -9,8 +9,10 @@ CUDA images can be used without NVIDIA devices attached, but will obviously lack
 
 Some builds based on certain software have builds that are triggered on schedule via a cron script to stay up to date. These are:
 
-- Caffe (weekly)
-- DIGITS (daily)
-- Torch (weekly)
+- [Caffe](https://github.com/BVLC/caffe) (weekly)
+- [DIGITS](https://github.com/NVIDIA/DIGITS) (daily)
+- [neon](https://github.com/NervanaSystems/neon) (daily)
+- [Theano](https://github.com/Theano/Theano) (daily)
+- [Torch](https://github.com/torch/distro) (weekly)
 
 If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
