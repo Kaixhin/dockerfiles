@@ -4,6 +4,7 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, python-dev, pip and other dependencies
 RUN apt-get update && apt-get install -y \
+  cmake \
   git \
   libatlas-base-dev \
   libjpeg-dev \
