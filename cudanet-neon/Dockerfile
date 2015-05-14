@@ -16,20 +16,24 @@ RUN apt-get update && apt-get install -y \
   python-pip \
   python-scipy
 
-# Clone cuda-convnet2 repo (Nervana fork) and move into it
-RUN cd root && git clone https://github.com/NervanaSystems/cuda-convnet2.git && cd cuda-convnet2 && \
-# Make build directory and move into it
-  mkdir build && cd build && \
-# Cmake
-  cmake .. && \
-# Make install
-  make -j"$(nproc)" install
+# Change to the /tmp directory
+RUN cd /tmp && \
+# Download run file
+  wget http://developer.download.nvidia.com/compute/cuda/${CUDA_MAJOR_U}/Prod/local_installers/cuda_${CUDA_VERSION}_linux.run && \
+# Make the run file executable and extract
+  chmod +x cuda_*_linux.run && ./cuda_*_linux.run -extract=`pwd` && \
+# Install CUDA samples (silent) for helper_cuda.h
+  ./cuda-samples-linux-*.run -noprompt && \
+# Clean up
+  rm -rf *
 
 # Clone neon repo and move into it
 RUN cd root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
-# Enable nervanagpu
+# Enable cudanet
   sed -i 's/GPU = 0/GPU = cudanet/g' setup.cfg && \
-# Make
-  make -j"$(nproc)" install
+# Make on single core (fails multithreaded)
+  make install
+# Add libraries to path
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # Set ~/neon as working directory
 WORKDIR /root/neon
