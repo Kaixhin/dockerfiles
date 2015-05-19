@@ -1,7 +1,11 @@
 cuda-vnc
 ========
 Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + LXDE desktop + Firefox browser + TightVNC server.
-Requires the host has the corresponding CUDA drivers (v. 346.46) installed for the kernel module. Runs as a daemon by default by using tail. 
+
+Requirements
+------------
+
+- Host with corresponding CUDA drivers (v. 346.46) installed for the kernel module.
 
 Build
 -----

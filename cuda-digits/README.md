@@ -1,7 +1,11 @@
 cuda-digits
 ===========
 Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [Pycaffe](http://caffe.berkeleyvision.org/) (NVIDIA fork) + [DIGITS](https://developer.nvidia.com/digits).
-Requires the host has the corresponding CUDA drivers (v. 346.46) installed for the kernel module.
+
+Requirements
+------------
+
+- Host with corresponding CUDA drivers (v. 346.46) installed for the kernel module.
 
 Usage
 -----
