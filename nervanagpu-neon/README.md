@@ -1,8 +1,12 @@
 nervanagpu-neon
 ===============
 Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [neon](http://neon.nervanasys.com/) ([nervanagpu](https://github.com/NervanaSystems/nervanagpu) backend).
-Requires the host has the corresponding CUDA drivers (v. 346.46) installed for the kernel module.
-Requires a Maxwell GPU architecture.
+
+Requirements
+------------
+
+- Host with corresponding CUDA drivers (v. 346.46) installed for the kernel module.
+- Maxwell GPU architecture.
 
 Usage
 -----
