@@ -17,12 +17,14 @@ Samples
 -------
 
 As the image is intended to be lightweight, the CUDA samples were not installed. If you wish to experiment with the samples you will need to install them yourself. The steps are as below:
+
 ```
 wget http://developer.download.nvidia.com/compute/cuda/7_0/Prod/local_installers/cuda_7.0.28_linux.run
 chmod +x cuda_*_linux.run
 ./cuda_*_linux.run -extract=`pwd`
 ./cuda-samples-linux-*.run -noprompt
 ```
+
 Please note that you may need to install other packages in order to compile some of the CUDA samples.
 
 Citation
