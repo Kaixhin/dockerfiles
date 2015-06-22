@@ -5,7 +5,7 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 # Install curl and dependencies for iTorch
 RUN apt-get update && apt-get install -y \
   curl \
-  ipython \
+  ipython3 \
   python-zmq
 # Run Torch7 installation scripts
 RUN curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
