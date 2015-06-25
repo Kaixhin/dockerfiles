@@ -63,8 +63,10 @@ RUN cd root && git clone https://github.com/facebook/fbthrift.git && cd fbthrift
 
 # Clone TH++ repo and move into it
 RUN cd root && git clone https://github.com/facebook/thpp.git && cd thpp/thpp && \
+# Add Torch to CMake path
+  export CMAKE_PREFIX_PATH=/root/torch/install && \
 # Build
-  ./build.sh
+   ./build.sh
 
 # Install fblualib dependencies
 RUN apt-get install -y \
