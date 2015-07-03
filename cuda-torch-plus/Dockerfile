@@ -33,16 +33,11 @@ RUN apt-get update && apt-get install -y \
 
 # Clone Folly repo and move into it
 RUN cd root && git clone https://github.com/facebook/folly.git && cd folly/folly && \
-# Download googletest
-  cd test && wget https://googletest.googlecode.com/files/gtest-1.7.0.zip && \
-# Unzip googletest
-  unzip gtest-1.7.0.zip && rm gtest-1.7.0.zip && cd .. && \
 # Set up build
   autoreconf -ivf && \
   ./configure && \
 # Make
   make && \
-  make check && \
 # Make install
   make install
 
@@ -65,8 +60,11 @@ RUN cd root && git clone https://github.com/facebook/fbthrift.git && cd fbthrift
 RUN cd root && git clone https://github.com/facebook/thpp.git && cd thpp/thpp && \
 # Add Torch to CMake path
   export CMAKE_PREFIX_PATH=/root/torch/install && \
+  export LD_LIBRARY_PATH=/root/folly/folly/.libs/:$LD_LIBRARY_PATH && \
+# Incorporate fix (temporary)
+  sed -i 's/--no-as-needed")/--no-as-needed,-lboost_thread,-lboost_system")/g' CMakeLists.txt && \
 # Build
-   ./build.sh
+  ./build.sh
 
 # Install fblualib dependencies
 RUN apt-get install -y \
@@ -101,3 +99,6 @@ RUN cd root && git clone https://github.com/facebook/fbnn.git && cd fbnn && \
 RUN cd root && git clone https://github.com/facebook/fbcunn.git && cd fbcunn && \
 # Make
   luarocks make rocks/fbcunn-scm-1.rockspec
+
+# Install autobw
+luarocks install https://raw.githubusercontent.com/bshillingford/autobw.torch/master/autobw-scm-1.rockspec
