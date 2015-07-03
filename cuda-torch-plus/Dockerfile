@@ -7,7 +7,8 @@ ADD cudnn*.tgz root/
 # Install cuDNN
 RUN cd root/cudnn* && \
   cp *.h /usr/local/cuda/include/ && \
-  cp *.so* /usr/local/cuda/lib64/
+  cp *.so* /usr/local/cuda/lib64/ && \
+  cp *.a /usr/local/cuda/lib64/
 
 # Install Folly dependencies
 RUN apt-get update && apt-get install -y \
