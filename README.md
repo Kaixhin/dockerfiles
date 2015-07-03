@@ -7,6 +7,9 @@ All images are based on Ubuntu Core 14.04 LTS, built with minimising size/layers
 Dependencies are indicated left to right e.g. cuda-vnc is VNC built on top of CUDA. Explicit dependencies are excluded.
 CUDA images can be used without NVIDIA devices attached, but will obviously lack the ability to use CUDA capabilities.
 
+Up-to-date builds
+-----------------
+
 Some builds based on certain software have builds that are triggered on schedule via a cron script to stay up to date on a weekly basis. These are:
 
 - [Caffe](https://github.com/BVLC/caffe)
@@ -14,5 +17,19 @@ Some builds based on certain software have builds that are triggered on schedule
 - [neon](https://github.com/NervanaSystems/neon)
 - [Theano](https://github.com/Theano/Theano)
 - [Torch](https://github.com/torch/distro)
+
+Daemonising containers
+----------------------
+
+Most containers run as a foreground process. To daemonise such a container it is possible to use:
+
+`docker run -d <image> /bin/sh -c "while true; do :; done"`
+
+It is now possible to access the daemonised container, for example using bash:
+
+`docker exec -it <id> bash`
+
+Research
+--------
 
 If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
