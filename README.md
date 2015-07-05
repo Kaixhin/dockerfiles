@@ -29,7 +29,14 @@ It is now possible to access the daemonised container, for example using bash:
 
 `docker exec -it <id> bash`
 
-Research
---------
+Migration
+---------
 
+In the future it will hopefully be possible to checkpoint and restore Docker containers easily using [CRIU](http://criu.org/Docker).
+This would alleviate some issues, such as the inability to restart a VNC image successfully.
+
+Final notes
+-----------
+
+This work is released under the [MIT License](https://github.com/Kaixhin/dockerfiles/blob/master/LICENSE.md).
 If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
