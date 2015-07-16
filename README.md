@@ -23,7 +23,7 @@ Daemonising containers
 
 Most containers run as a foreground process. To daemonise such a container it is possible to use:
 
-`docker run -d <image> /bin/sh -c "while true; do :; done"`
+`docker run -d <image> sh -c "while true; do :; done"`
 
 It is now possible to access the daemonised container, for example using bash:
 
