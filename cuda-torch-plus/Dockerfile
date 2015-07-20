@@ -2,42 +2,99 @@
 FROM kaixhin/cuda-torch
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
+# Add Torch to path
+ENV PATH=/root/torch/install/bin:$PATH
+
 # Move cuDNN over and extract
 ADD cudnn*.tgz /root/
 # Install cuDNN
 RUN cd /root/cudnn* && \
   cp *.h /usr/local/cuda/include/ && \
-  cp *.so* /usr/local/cuda/lib64/ && \
+  cp --preserve=links *.so* /usr/local/cuda/lib64/ && \
   cp *.a /usr/local/cuda/lib64/
 
-# Run apt-get update (before running deps.sh)
-RUN apt-get update
+# Install Folly dependencies
+RUN apt-get update && apt-get install -y \
+  g++ \
+  automake \
+  autoconf \
+  autoconf-archive \
+  libtool \
+  libboost-all-dev \
+  libevent-dev \
+  libdouble-conversion-dev \
+  libgoogle-glog-dev \
+  libgflags-dev \
+  liblz4-dev \
+  liblzma-dev \
+  libsnappy-dev \
+  make \
+  zlib1g-dev \
+  binutils-dev \
+  libjemalloc-dev \
+  libssl-dev \
+  libiberty-dev
+
+# Clone Folly repo and move into it
+RUN cd /root && git clone https://github.com/facebook/folly.git && cd folly/folly && \
+# Check out v0.47.0 for FBThrift
+  git fetch && git checkout v0.47.0 && \
+# Set up build
+  autoreconf --install && \
+  ./configure && \
+# Make
+  make -j"$(nproc)" && \
+# Make install
+  make -j"$(nproc)" install
+
+# Install FBThrift dependencies
+RUN apt-get install -y \
+  flex \
+  bison \
+  libkrb5-dev \
+  libsasl2-dev \
+  libnuma-dev \
+  pkg-config \
+  libssl-dev
 
 # Clone FBThrift repo and move into it
 RUN cd /root && git clone https://github.com/facebook/fbthrift.git && cd fbthrift/thrift && \
-# Install dependencies (including Folly) and build
-  ./deps.sh
+# Set up build
+  autoreconf --install && \
+  CPPFLAGS=" -I/root/folly/" LDFLAGS="-L/root/folly/folly/.libs/" ./configure && \
+# Make
+  make -j"$(nproc)" && \
+# Make install
+  make -j"$(nproc)" install
 
 # Clone TH++ repo and move into it
 RUN cd /root && git clone https://github.com/facebook/thpp.git && cd thpp/thpp && \
+# Download and unzip gtest
+  curl -JLO https://googletest.googlecode.com/files/gtest-1.7.0.zip && unzip gtest-1.7.0.zip && \
+# Incorporate fix (temporary)
+  sed -i 's/--no-as-needed")/--no-as-needed,-lboost_thread,-lboost_system")/g' CMakeLists.txt && \
+# Make build directory and move into it
+  mkdir build && cd build && \
 # Add Torch to CMake path
- # export CMAKE_PREFIX_PATH=/root/torch/install && \
- ls /root/fbthrift && ls /root/fbthrift/folly && \
- export LD_LIBRARY_PATH=/root/fbthrift/folly/folly/.libs/:$LD_LIBRARY_PATH && \
-# aIncorporate fix (temporary)
- # sed -i 's/--no-as-needed")/--no-as-needed,-lboost_thread,-lboost_system")/g' CMakeLists.txt && \
-# Build
-  ./build.sh
+  export CMAKE_PREFIX_PATH=/root/torch/install && \
+# CMake
+  cmake .. && \
+# Make
+  make -j"$(nproc)" && \
+# Make install
+  make -j"$(nproc)" install
 
-# Install fblualib dependencies
+# Install FBLuaLib dependencies
 RUN apt-get install -y \
   libedit-dev \
   libmatio-dev \
   libpython-dev \
   python-numpy
 
-# Clone fblualib repo and move into it
+# Clone FBLuaLib repo and move into it
 RUN cd /root && git clone https://github.com/facebook/fblualib.git && cd fblualib/fblualib && \
+# Add Torch to CMake path
+  export CMAKE_PREFIX_PATH=/root/torch/install && \
 # Build
   ./build.sh
 
@@ -64,4 +121,4 @@ RUN cd /root && git clone https://github.com/facebook/fbcunn.git && cd fbcunn &&
   luarocks make rocks/fbcunn-scm-1.rockspec
 
 # Install autobw
-luarocks install https://raw.githubusercontent.com/bshillingford/autobw.torch/master/autobw-scm-1.rockspec
+RUN luarocks install https://raw.githubusercontent.com/bshillingford/autobw.torch/master/autobw-scm-1.rockspec
