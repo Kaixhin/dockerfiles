@@ -17,6 +17,6 @@ RUN cat password.txt password.txt | vncpasswd && \
 # Expose VNC port
 EXPOSE 5901
 
-# Copy VNC script that handles SIGTERM
+# Copy VNC script that handles restarts
 COPY vnc.sh /opt/
 CMD ["/opt/vnc.sh"]
