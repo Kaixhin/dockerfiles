@@ -17,5 +17,6 @@ RUN cat password.txt password.txt | vncpasswd && \
 # Expose VNC port
 EXPOSE 5901
 
-# Run VNC server with tail in the foreground (ignores failure on restart)
-CMD vncserver :1 -geometry 1280x800 -depth 24 && tail -F /root/.vnc/*.log
+# Copy VNC script that handles SIGTERM
+COPY vnc.sh /opt/
+CMD ["/opt/vnc.sh"]
