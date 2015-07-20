@@ -28,7 +28,7 @@ RUN cd /tmp && \
   rm -rf *
 
 # Clone neon repo and move into it
-RUN cd root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
+RUN cd /root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
 # Enable cudanet
   sed -i 's/GPU = 0/GPU = cudanet/g' setup.cfg && \
 # Make on single core (fails multithreaded)

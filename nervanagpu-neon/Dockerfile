@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --upgrade pycuda six
 
 # Clone MaxAs repo and move into it
-RUN cd root && git clone https://github.com/NervanaSystems/maxas.git && cd maxas && \
+RUN cd /root && git clone https://github.com/NervanaSystems/maxas.git && cd maxas && \
 # Create makefile
   perl Makefile.PL && \
 # Make
@@ -22,12 +22,12 @@ RUN cd root && git clone https://github.com/NervanaSystems/maxas.git && cd maxas
   make -j"$(nproc)" install
 
 # Clone NervanaGPU repo and move into it
-RUN cd root && git clone https://github.com/NervanaSystems/nervanagpu.git && cd nervanagpu && \
+RUN cd /root && git clone https://github.com/NervanaSystems/nervanagpu.git && cd nervanagpu && \
 # Make
   make -j"$(nproc)"
 
 # Clone neon repo and move into it
-RUN cd root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
+RUN cd /root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
 # Enable nervanagpu
   sed -i 's/GPU = 0/GPU = nervanagpu/g' setup.cfg && \
 # Make

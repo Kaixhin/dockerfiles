@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
   libsnappy-dev
 
 # Clone Caffe repo and move into it
-RUN cd root && git clone https://github.com/BVLC/caffe.git && cd caffe && \
+RUN cd /root && git clone https://github.com/BVLC/caffe.git && cd caffe && \
 # Copy Makefile
   cp Makefile.config.example Makefile.config && \
 # Enable CPU-only

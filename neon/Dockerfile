@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
   python-numpy
 
 # Clone neon repo and move into it
-RUN cd root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
+RUN cd /root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
 # Make
   make -j"$(nproc)" install
 # Set ~/neon as working directory

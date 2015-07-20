@@ -3,9 +3,9 @@ FROM kaixhin/cuda
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Move cuDNN over and extract
-ADD cudnn*.tgz root/
+ADD cudnn*.tgz /root/
 # Install cuDNN
-RUN cd root/cudnn* && \
+RUN cd /root/cudnn* && \
   cp cudnn.h /usr/local/include/ && \
   cp -d libcudnn* /usr/local/lib/
 
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
   gfortran
 
 # Clone NVIDIA Caffe repo and move into it
-RUN cd root && git clone --branch v0.11.0 https://github.com/NVIDIA/caffe.git && cd caffe && \
+RUN cd /root && git clone --branch v0.11.0 https://github.com/NVIDIA/caffe.git && cd caffe && \
 # Install python dependencies
   cd python && \
   for req in $(cat requirements.txt); do pip install $req; done && \
@@ -43,7 +43,7 @@ RUN cd root && git clone --branch v0.11.0 https://github.com/NVIDIA/caffe.git &&
 ENV CAFFE_HOME /root/caffe
 
 # Clone DIGITS and move into it
-RUN cd root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digits && \
+RUN cd /root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digits && \
 # Install dependencies
   apt-get install -y graphviz gunicorn && \
 # Install python dependencies
