@@ -25,6 +25,5 @@ RUN cd /tmp && \
   rm -rf *
 
 # Add to path
-ENV PATH /usr/local/cuda/bin:${PATH}
-# Configure dynamic link
-RUN echo "/usr/local/cuda/lib64" >> /etc/ld.so.conf && ldconfig
+ENV PATH=/usr/local/cuda/bin:$PATH \
+  LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH

@@ -2,9 +2,6 @@
 FROM kaixhin/cuda-torch
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Add Torch to path
-ENV PATH=/root/torch/install/bin:$PATH
-
 # Move cuDNN over and extract
 ADD cudnn*.tgz /root/
 # Install cuDNN
