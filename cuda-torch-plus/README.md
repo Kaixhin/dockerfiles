@@ -6,6 +6,7 @@ Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.htm
 - [fbtorch](https://github.com/facebook/fbtorch)
 - [fbnn](https://github.com/facebook/fbnn)
 - [fbcunn](https://github.com/facebook/fbcunn)
+- [parallel](https://github.com/clementfarabet/lua---parallel)
 - [autobw](https://github.com/bshillingford/autobw.torch)
 
 Requirements
