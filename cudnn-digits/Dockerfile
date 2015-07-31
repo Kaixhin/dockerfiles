@@ -6,8 +6,9 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 ADD cudnn*.tgz /root/
 # Install cuDNN
 RUN cd /root/cudnn* && \
-  cp cudnn.h /usr/local/include/ && \
-  cp -d libcudnn* /usr/local/lib/
+  cp *.h /usr/local/cuda/include/ && \
+  cp --preserve=links *.so* /usr/local/cuda/lib64/ && \
+  cp *.a /usr/local/cuda/lib64/
 
 # Install git, bc and dependencies
 RUN apt-get update && apt-get install -y \
