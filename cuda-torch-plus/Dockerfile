@@ -122,3 +122,6 @@ RUN luarocks install parallel
 
 # Install autobw
 RUN luarocks install https://raw.githubusercontent.com/bshillingford/autobw.torch/master/autobw-scm-1.rockspec
+
+# Install stn
+RUN luarocks install https://raw.githubusercontent.com/qassemoquab/stnbhwd/master/stnbhwd-scm-1.rockspec
