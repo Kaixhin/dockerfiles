@@ -125,3 +125,6 @@ RUN luarocks install https://raw.githubusercontent.com/bshillingford/autobw.torc
 
 # Install stn
 RUN luarocks install https://raw.githubusercontent.com/qassemoquab/stnbhwd/master/stnbhwd-scm-1.rockspec
+
+# Install oxnn
+RUN luarocks install https://raw.githubusercontent.com/tkocisky/oxnn/master/oxnn-scm-1.rockspec

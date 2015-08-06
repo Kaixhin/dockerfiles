@@ -2,12 +2,13 @@ cuda-torch-plus
 ===============
 Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v2 RC3](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Includes the following additional packages:
 
-- [FBLuaLib](https://github.com/facebook/fblualib)
-- [fbtorch](https://github.com/facebook/fbtorch)
-- [fbnn](https://github.com/facebook/fbnn)
-- [fbcunn](https://github.com/facebook/fbcunn)
-- [parallel](https://github.com/clementfarabet/lua---parallel)
 - [autobw](https://github.com/bshillingford/autobw.torch)
+- [fbcunn](https://github.com/facebook/fbcunn)
+- [FBLuaLib](https://github.com/facebook/fblualib)
+- [fbnn](https://github.com/facebook/fbnn)
+- [fbtorch](https://github.com/facebook/fbtorch)
+- [oxnn](https://github.com/tkocisky/oxnn)
+- [parallel](https://github.com/clementfarabet/lua---parallel)
 - [stn](https://github.com/qassemoquab/stnbhwd)
 
 Requirements
