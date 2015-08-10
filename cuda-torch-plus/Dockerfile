@@ -120,6 +120,9 @@ RUN cd /root && git clone https://github.com/facebook/fbcunn.git && cd fbcunn &&
 # Install parallel
 RUN luarocks install parallel
 
+# Install rnn
+RUN luarocks install rnn
+
 # Install autobw
 RUN luarocks install https://raw.githubusercontent.com/bshillingford/autobw.torch/master/autobw-scm-1.rockspec
 
