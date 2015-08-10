@@ -123,6 +123,9 @@ RUN luarocks install parallel
 # Install rnn
 RUN luarocks install rnn
 
+# Install oxnn
+RUN luarocks install https://raw.githubusercontent.com/tkocisky/oxnn/master/oxnn-scm-1.rockspec
+
 # Install autobw
 RUN luarocks install https://raw.githubusercontent.com/bshillingford/autobw.torch/master/autobw-scm-1.rockspec
 
