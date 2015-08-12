@@ -41,6 +41,15 @@ Migration
 
 In the future it will hopefully be possible to checkpoint and restore Docker containers easily using [CRIU](http://criu.org/Docker). This would alleviate some issues, such as the inability to restart a VNC image successfully.
 
+Acknowledgements
+----------------
+
+Some Dockerfiles have been modified from the work of others. The source for these are:
+
+- [CUDA](https://github.com/tleyden/docker)
+- [Samba](https://github.com/dperson/samba)
+- [VNC](https://github.com/dockerfile/ubuntu-desktop)
+
 Final notes
 -----------
 
