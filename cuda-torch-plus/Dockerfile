@@ -117,6 +117,12 @@ RUN cd /root && git clone https://github.com/facebook/fbcunn.git && cd fbcunn &&
 # Make
   luarocks make rocks/fbcunn-scm-1.rockspec
 
+# Install LuaSocket
+RUN luarocks install luasocket
+
+# Install json
+RUN luarocks install json
+
 # Install parallel
 RUN luarocks install parallel
 

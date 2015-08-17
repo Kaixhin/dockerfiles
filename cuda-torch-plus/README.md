@@ -8,6 +8,8 @@ Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.htm
 - [FBLuaLib](https://github.com/facebook/fblualib)
 - [fbnn](https://github.com/facebook/fbnn)
 - [fbtorch](https://github.com/facebook/fbtorch)
+- [json](https://github.com/clementfarabet/lua---json)
+- [LuaSocket](https://github.com/diegonehab/luasocket)
 - [oxnn](https://github.com/tkocisky/oxnn)
 - [parallel](https://github.com/clementfarabet/lua---parallel)
 - [rnn](https://github.com/Element-Research/rnn)
