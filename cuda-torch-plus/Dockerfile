@@ -31,7 +31,6 @@ RUN apt-get update && apt-get install -y \
   libjemalloc-dev \
   libssl-dev \
   libiberty-dev
-
 # Clone Folly repo and move into it
 RUN cd /root && git clone https://github.com/facebook/folly.git && cd folly/folly && \
 # Check out v0.47.0 for FBThrift
@@ -53,7 +52,6 @@ RUN apt-get install -y \
   libnuma-dev \
   pkg-config \
   libssl-dev
-
 # Clone FBThrift repo and move into it
 RUN cd /root && git clone https://github.com/facebook/fbthrift.git && cd fbthrift/thrift && \
 # Set up build
@@ -87,7 +85,6 @@ RUN apt-get install -y \
   libmatio-dev \
   libpython-dev \
   python-numpy
-
 # Clone FBLuaLib repo and move into it
 RUN cd /root && git clone https://github.com/facebook/fblualib.git && cd fblualib/fblualib && \
 # Add Torch to CMake path
@@ -126,6 +123,13 @@ RUN luarocks install json
 # Install parallel
 RUN luarocks install parallel
 
+# Install loadcaffe dependencies
+RUN apt-get install -y \
+  libprotobuf-dev \
+  protobuf-compiler
+# Install loadcaffe
+RUN luarocks install loadcaffe
+
 # Install torchx
 RUN luarocks install torchx
 
@@ -137,6 +141,9 @@ RUN luarocks install dp
 
 # Install rnn
 RUN luarocks install rnn
+
+# Install inn
+RUN luarocks install inn
 
 # Install oxnn
 RUN luarocks install https://raw.githubusercontent.com/tkocisky/oxnn/master/oxnn-scm-1.rockspec
