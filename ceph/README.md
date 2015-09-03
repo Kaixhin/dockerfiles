@@ -1,6 +1,6 @@
 ceph
 =====
-Ubuntu Core 14.04 + [Ceph](#).
+Ubuntu Core 14.04 + [Ceph](http://ceph.com).
 
 Usage
 -----
