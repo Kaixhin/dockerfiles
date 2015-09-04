@@ -1,3 +1,5 @@
+# Ignore ceph.conf
+ceph/ceph.conf
 # Ignore cuDNN
 cuda-torch-plus/cudnn*
 cudnn-digits/cudnn*
