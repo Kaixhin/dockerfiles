@@ -14,6 +14,8 @@ RUN echo deb http://ceph.com/debian-hammer/ $(lsb_release -sc) main | tee /etc/a
 # Install ceph
 RUN apt-get install -y ceph
 
+# Set /opt as working directory
+WORKDIR /opt
 # Copy scripts
 COPY auth.sh /opt/auth.sh
 COPY monmap.sh /opt/monmap.sh
