@@ -1,5 +1,5 @@
 # Start with CUDA base image
-FROM kaixhin/cuda:7.5
+FROM kaixhin/cuda:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install OpenSSH, X server and libgtk (for NVIDIA Visual Profiler)
