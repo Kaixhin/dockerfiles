@@ -1,5 +1,5 @@
 # Start with CUDA base image
-FROM kaixhin/cuda
+FROM kaixhin/cuda:7.0
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, bc and dependencies
@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
   gfortran
 
 # Clone NVIDIA Caffe repo and move into it
-RUN cd /root && git clone --branch caffe-0.12 https://github.com/NVIDIA/caffe.git && cd caffe && \
+RUN cd /root && git clone --branch caffe-0.13 https://github.com/NVIDIA/caffe.git && cd caffe && \
 # Install python dependencies
   cd python && \
   for req in $(cat requirements.txt); do pip install $req; done && \

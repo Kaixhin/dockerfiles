@@ -1,13 +1,13 @@
 cudanet-neon
 ============
-Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [neon](http://neon.nervanasys.com/) ([cudanet](https://github.com/NervanaSystems/cuda-convnet2/) backend).
+Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [neon](http://neon.nervanasys.com/) ([cudanet](https://github.com/NervanaSystems/cuda-convnet2/) backend).
 
 **NB: Weekly builds have been disabled until https://github.com/NervanaSystems/cuda-convnet2/issues/3 is addressed.**
 
 Requirements
 ------------
 
-- Host with corresponding CUDA drivers (v. 346.46) installed for the kernel module.
+- Host with corresponding CUDA drivers (v. 352.39) installed for the kernel module.
 
 Usage
 -----
