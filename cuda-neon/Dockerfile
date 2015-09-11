@@ -1,5 +1,5 @@
 # Start with Ubuntu base image
-FROM cuda:latest
+FROM kaixhin/cuda:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install build-essential, git, python-dev, pip and other dependencies
