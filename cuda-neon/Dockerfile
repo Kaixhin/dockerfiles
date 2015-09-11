@@ -1,5 +1,5 @@
 # Start with Ubuntu base image
-FROM ubuntu:14.04
+FROM cuda:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install build-essential, git, python-dev, pip and other dependencies
