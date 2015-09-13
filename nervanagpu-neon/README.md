@@ -1,11 +1,13 @@
 nervanagpu-neon
 ===============
-Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [neon](http://neon.nervanasys.com/) ([nervanagpu](https://github.com/NervanaSystems/nervanagpu) backend).
+Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [neon](http://neon.nervanasys.com/) ([nervanagpu](https://github.com/NervanaSystems/nervanagpu) backend).
+
+**DEPRECATED:** This image contains [neon 0.9](http://neon.nervanasys.com/docs/0.9.0/) with CUDA 7.0.28. For neon >= 1.0 use [kaixhin/cuda-neon](https://hub.docker.com/r/kaixhin/cuda-neon/).
 
 Requirements
 ------------
 
-- Host with corresponding CUDA drivers (v. 352.39) installed for the kernel module.
+- Host with corresponding CUDA drivers (v. 346.46) installed for the kernel module.
 - Maxwell GPU architecture.
 
 Usage
