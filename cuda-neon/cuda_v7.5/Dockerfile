@@ -1,4 +1,4 @@
-# Start with Ubuntu base image
+# Start with CUDA base image
 FROM kaixhin/cuda:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
