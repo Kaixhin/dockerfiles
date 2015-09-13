@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/vnc.svg)](https://hub.docker.com/r/kaixhin/vnc/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/vnc.svg)](https://hub.docker.com/r/kaixhin/vnc/)
+
 vnc
 ===
 Ubuntu Core 14.04 + LXDE desktop + Firefox browser + TightVNC server. Runs as a daemon by default by using tail.

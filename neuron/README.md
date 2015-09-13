@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/neuron.svg)](https://hub.docker.com/r/kaixhin/neuron/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/neuron.svg)](https://hub.docker.com/r/kaixhin/neuron/)
+
 neuron
 ======
 Ubuntu Core 14.04 + LXDE desktop + Firefox browser + TightVNC server + [NEURON](http://www.neuron.yale.edu/neuron/). Runs as a daemon by default by using tail.

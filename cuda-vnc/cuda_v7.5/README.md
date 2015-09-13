@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-vnc.svg)](https://hub.docker.com/r/kaixhin/cuda-vnc/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-vnc.svg)](https://hub.docker.com/r/kaixhin/cuda-vnc/)
+
 cuda-vnc
 ========
 Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + LXDE desktop + Firefox browser + TightVNC server.

@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/samba.svg)](https://hub.docker.com/r/kaixhin/samba/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/samba.svg)](https://hub.docker.com/r/kaixhin/samba/)
+
 samba
 =====
 Ubuntu Core 14.04 + Samba server.

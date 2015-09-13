@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/ssh.svg)](https://hub.docker.com/r/kaixhin/ssh/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/ssh.svg)](https://hub.docker.com/r/kaixhin/ssh/)
+
 ssh
 ===
 Ubuntu Core 14.04 + SSH server.

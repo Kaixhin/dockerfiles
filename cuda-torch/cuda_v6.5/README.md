@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-torch.svg)](https://hub.docker.com/r/kaixhin/cuda-torch/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-torch.svg)](https://hub.docker.com/r/kaixhin/cuda-torch/)
+
 cuda-torch
 ==========
 Ubuntu Core 14.04 + [CUDA 6.5.14](http://www.nvidia.com/object/cuda_home_new.html) + [Torch7](http://torch.ch/) (including iTorch).

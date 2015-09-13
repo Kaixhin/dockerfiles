@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-caffe.svg)](https://hub.docker.com/r/kaixhin/cuda-caffe/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-caffe.svg)](https://hub.docker.com/r/kaixhin/cuda-caffe/)
+
 cuda-caffe
 ==========
 Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [Caffe](http://caffe.berkeleyvision.org/).

@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-ssh.svg)](https://hub.docker.com/r/kaixhin/cuda-ssh/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-ssh.svg)](https://hub.docker.com/r/kaixhin/cuda-ssh/)
+
 cuda-ssh
 ========
 Ubuntu Core 14.04 + [CUDA 6.5.14](http://www.nvidia.com/object/cuda_home_new.html) + SSH server + X server (for NVIDIA Visual Profiler).

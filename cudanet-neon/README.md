@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cudanet-neon.svg)](https://hub.docker.com/r/kaixhin/cudanet-neon/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cudanet-neon.svg)](https://hub.docker.com/r/kaixhin/cudanet-neon/)
+
 cudanet-neon
 ============
 Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [neon](http://neon.nervanasys.com/) ([cudanet](https://github.com/NervanaSystems/cuda-convnet2/) backend).

@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/vnc-ros.svg)](https://hub.docker.com/r/kaixhin/vnc-ros/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/vnc-ros.svg)](https://hub.docker.com/r/kaixhin/vnc-ros/)
+
 vnc-ros
 =======
 Ubuntu Core 14.04 + LXDE desktop + Firefox browser + TightVNC server + [ROS Jade Desktop Full](http://www.ros.org/). Runs as a daemon by default by using tail.

@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/nervanagpu-neon.svg)](https://hub.docker.com/r/kaixhin/nervanagpu-neon/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/nervanagpu-neon.svg)](https://hub.docker.com/r/kaixhin/nervanagpu-neon/)
+
 nervanagpu-neon
 ===============
 Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [neon](http://neon.nervanasys.com/) ([nervanagpu](https://github.com/NervanaSystems/nervanagpu) backend).

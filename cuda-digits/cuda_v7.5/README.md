@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-digits.svg)](https://hub.docker.com/r/kaixhin/cuda-digits/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-digits.svg)](https://hub.docker.com/r/kaixhin/cuda-digits/)
+
 cuda-digits
 ===========
 Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [Pycaffe](http://caffe.berkeleyvision.org/) (NVIDIA fork) + [DIGITS](https://developer.nvidia.com/digits).

@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/digits.svg)](https://hub.docker.com/r/kaixhin/digits/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/digits.svg)](https://hub.docker.com/r/kaixhin/digits/)
+
 digits
 ======
 Ubuntu Core 14.04 + [Pycaffe](http://caffe.berkeleyvision.org/) (NVIDIA fork) + [DIGITS](https://developer.nvidia.com/digits) (CPU-only).

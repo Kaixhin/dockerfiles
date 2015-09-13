@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-lasagne.svg)](https://hub.docker.com/r/kaixhin/cuda-lasagne/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-lasagne.svg)](https://hub.docker.com/r/kaixhin/cuda-lasagne/)
+
 cuda-lasagne
 ============
 Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [Lasagne](http://lasagne.readthedocs.org/).

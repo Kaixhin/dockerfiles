@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/localtunnel.svg)](https://hub.docker.com/r/kaixhin/localtunnel/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/localtunnel.svg)](https://hub.docker.com/r/kaixhin/localtunnel/)
+
 localtunnel
 ===========
 Node.js + [localtunnel](http://localtunnel.me/).
