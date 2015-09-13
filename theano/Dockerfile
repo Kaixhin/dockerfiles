@@ -6,8 +6,7 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 RUN apt-get update && apt-get install -y \
   build-essential \
   git \
-  libatlas3gf-base \
-  libatlas-dev \
+  libopenblas-dev \
   python-dev \
   python-pip \
   python-nose \
