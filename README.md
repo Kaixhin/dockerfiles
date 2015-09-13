@@ -1,3 +1,5 @@
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Kaixhin/dockerfiles/master/LICENSE)
+
 dockerfiles
 ===========
 
@@ -54,7 +56,7 @@ Some Dockerfiles have been modified from the work of others. The source for thes
 - [Samba](https://github.com/dperson/samba)
 - [VNC](https://github.com/dockerfile/ubuntu-desktop)
 
-Final notes
------------
+Citation
+--------
 
-This work is released under the [MIT License](https://github.com/Kaixhin/dockerfiles/blob/master/LICENSE.md). If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
+If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
