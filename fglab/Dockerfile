@@ -2,15 +2,10 @@
 FROM node
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install Bower
-RUN npm install -g bower
-
 # Clone FGLab repo and move into it
 RUN cd /root && git clone https://github.com/Kaixhin/FGLab.git && cd FGLab && \
 # npm install
   npm install && \
-# Bower install
-  bower install --allow-root && \
 # Create .env with port
   echo "PORT=5000" > .env
 
