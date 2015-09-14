@@ -10,7 +10,7 @@ RUN cd /root && git clone https://github.com/Kaixhin/FGLab.git && cd FGLab && \
 # npm install
   npm install && \
 # Bower install
-  bower install && \
+  bower install --allow-root && \
 # Create .env with port
   echo "PORT=5000" > .env
 
