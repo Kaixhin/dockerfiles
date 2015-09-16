@@ -6,10 +6,12 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 RUN apt-get update && apt-get install -y \
   build-essential \
   git \
+  pkg-config \
   python-dev \
   python-pip \
   python-virtualenv \
   libhdf5-dev \
+  libopencv-dev \
   libyaml-dev
 
 # Clone neon repo and move into it
