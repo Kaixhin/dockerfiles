@@ -19,8 +19,8 @@ RUN pip install --upgrade six
 
 # Clone neon repo and move into it
 RUN cd /root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
-# Make
-  make -j"$(nproc)"
+# Make (no multithreading due to Docker Hub automated build memory limits)
+  make
 # Set ~/neon as working directory
 WORKDIR /root/neon
 # Activate virtualenv
