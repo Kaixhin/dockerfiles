@@ -17,8 +17,6 @@ RUN apt-get update && apt-get install -y \
 # Clone neon repo and move into it
 RUN cd /root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
 # Make
-  make -j"$(nproc)"
+  make -j"$(nproc)" sysinstall
 # Set ~/neon as working directory
 WORKDIR /root/neon
-# Activate virtualenv
-RUN . .venv/bin/activate
