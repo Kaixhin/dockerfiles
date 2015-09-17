@@ -2,8 +2,12 @@
 FROM kaixhin/cuda:6.5
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
+# Edits to keep within Docker Hub Automated Builds memory limit:
+# - Redirecting stdout to /dev/null
+# - No multithreading in make
+
 # Install build-essential, git, python-dev, pip and other dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update > /dev/null && apt-get install -y \
   build-essential \
   git \
   pkg-config \
@@ -12,14 +16,15 @@ RUN apt-get update && apt-get install -y \
   python-virtualenv \
   libhdf5-dev \
   libopencv-dev \
-  libyaml-dev
+  libyaml-dev \
+  > /dev/null
 
 # Upgrade six
-RUN pip install --upgrade six
+RUN pip install --upgrade six > /dev/null
 
 # Clone neon repo and move into it
 RUN cd /root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
-# Make (no multithreading due to Docker Hub automated build memory limits)
-  make sysinstall
+# Make
+  make sysinstall > /dev/null
 # Set ~/neon as working directory
 WORKDIR /root/neon
