@@ -15,7 +15,7 @@ Some builds based on certain software have builds that are triggered on schedule
 - [Caffe](https://github.com/BVLC/caffe)
 - [DIGITS](https://github.com/NVIDIA/DIGITS)
 - [Lasagne](https://github.com/Lasagne/Lasagne)
-- [neon](https://github.com/NervanaSystems/neon)
+- [neon](https://github.com/NervanaSystems/neon) (only CPU builds)
 - [Theano](https://github.com/Theano/Theano)
 - [Torch](https://github.com/torch/distro)
 
@@ -46,6 +46,19 @@ Migration
 ---------
 
 In the future it will hopefully be possible to checkpoint and restore Docker containers easily using [CRIU](http://criu.org/Docker). This would alleviate some issues, such as the inability to restart a VNC image successfully.
+
+Automated Builds
+----------------
+
+[Automated Builds](https://docs.docker.com/docker-hub/builds/) on the Docker Hub have several advantages, including reproducibility and security. However the build cluster has the following limits for Automated Builds:
+
+- 2 hours
+- 1 CPU
+- 2 GB RAM
+- 512 MB swap
+- 30 GB disk space
+
+The main tip for keeping within the CPU and memory limits is to reduce parallelism/forking processes. Due to their logging system, redirecting stdout/stderr to /dev/null can potentially save a reasonable amount of memory.
 
 Acknowledgements
 ----------------
