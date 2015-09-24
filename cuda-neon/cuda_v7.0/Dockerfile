@@ -19,7 +19,7 @@ RUN pip install --upgrade six
 
 # Clone neon repo and move into it
 RUN cd /root && git clone https://github.com/NervanaSystems/neon.git && cd neon && \
-# Make (no multithreading to save resources)
+# Make (no multithreading to save resources/prevent concurrency errors)
   make sysinstall
 # Set ~/neon as working directory
 WORKDIR /root/neon
