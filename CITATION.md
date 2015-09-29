@@ -1,7 +1,7 @@
 Citation
 ========
 
-The following may be used to cite usage of source Dockerfiles or derived Docker images.
+A research paper is in the works, involving [FGLab](https://github.com/Kaixhin/FGLab). For now, the following may be used to cite usage of source Dockerfiles or derived Docker images.
 
 ### BibTeX
     @misc{dockerfiles,
