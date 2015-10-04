@@ -16,6 +16,7 @@ Some builds based on certain software have builds that are triggered on schedule
 - [DIGITS](https://github.com/NVIDIA/DIGITS)
 - [Lasagne](https://github.com/Lasagne/Lasagne)
 - [neon](https://github.com/NervanaSystems/neon)
+- [Spearmint](https://github.com/HIPS/Spearmint)
 - [Theano](https://github.com/Theano/Theano)
 - [Torch](https://github.com/torch/distro)
 
