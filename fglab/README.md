@@ -7,7 +7,7 @@ Ubuntu Core 14.04 + [FGLab](https://github.com/Kaixhin/FGLab).
 
 Usage
 -----
-Link with a MongoDB instance e.g. `docker run --link mongodb:mongo -dP kaixhin/fglab`.
+See the [source repo](https://github.com/Kaixhin/FGLab#docker) for details.
 
 Citation
 --------
