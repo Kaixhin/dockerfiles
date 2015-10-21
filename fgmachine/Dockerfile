@@ -7,6 +7,9 @@ RUN cd /root && git clone https://github.com/Kaixhin/FGMachine.git && cd FGMachi
 # npm install
   npm install
 
+# Install lxc for creating sibling containers with docker
+RUN apt-get update && apt-get install -y lxc
+
 # Expose port
 EXPOSE 5081
 # Set working directory
