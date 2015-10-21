@@ -32,6 +32,15 @@ It is now possible to access the daemonised container, for example using bash:
 
 `docker exec -it <id> bash`
 
+Sibling containers
+------------------
+
+To start containers on the host from within a docker container, the following options should be used when running the container:
+
+`-v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):$(which docker)`
+
+The container also needs to have `lxc` installed.
+
 CUDA
 ----
 
