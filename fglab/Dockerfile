@@ -7,7 +7,7 @@ RUN cd /root && git clone https://github.com/Kaixhin/FGLab.git && cd FGLab && \
 # npm install (with root)
   npm install --unsafe-perm && \
 # Create .env with port
-  echo "PORT=5080" > .env
+  echo "FGLAB_PORT=5080" > .env
 
 # Expose port
 EXPOSE 5080
