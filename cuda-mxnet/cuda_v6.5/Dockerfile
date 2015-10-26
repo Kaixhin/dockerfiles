@@ -5,7 +5,7 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 # Install git and other dependencies
 RUN apt-get update && apt-get install -y \
   git \
-  libblas-dev \
+  libopenblas-dev \
   libopencv-dev \
   python-dev \
   python-numpy \
@@ -16,8 +16,11 @@ RUN apt-get update && apt-get install -y \
 RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet && \
 # Copy config.mk
   cp make/config.mk config.mk && \
+# Set OpenBLAS
+  sed -i 's/USE_BLAS = blas/USE_BLAS = openblas/g' config.mk && \
 # Set CUDA flag
   sed -i 's/USE_CUDA = 0/USE_CUDA = 1/g' config.mk && \
+  sed -i 's/USE_CUDA_PATH = NONE/USE_CUDA_PATH = \/usr\/local\/cuda/g' config.mk && \
 # Make 
   make -j"$(nproc)"
 

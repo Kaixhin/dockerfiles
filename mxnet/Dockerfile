@@ -6,7 +6,7 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 RUN apt-get update && apt-get install -y \
   build-essential \
   git \
-  libblas-dev \
+  libopenblas-dev \
   libopencv-dev \
   python-dev \
   python-numpy \
@@ -16,6 +16,10 @@ RUN apt-get update && apt-get install -y \
 
 # Clone MXNet repo and move into it
 RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet && \
+# Copy config.mk
+  cp make/config.mk config.mk && \
+# Set OpenBLAS
+  sed -i 's/USE_BLAS = blas/USE_BLAS = openblas/g' config.mk && \
 # Make 
   make -j"$(nproc)"
 
