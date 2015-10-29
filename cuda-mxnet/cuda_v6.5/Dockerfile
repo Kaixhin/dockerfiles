@@ -1,18 +1,16 @@
-# Start with Ubuntu base image
-FROM ubuntu:14.04
+# Start with CUDA base image
+FROM kaixhin/cuda:6.5
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install build-essential, git and other dependencies
+# Install git and other dependencies
 RUN apt-get update && apt-get install -y \
-  build-essential \
   git \
   libopenblas-dev \
   libopencv-dev \
   python-dev \
   python-numpy \
   python-setuptools \
-  r-base \
-  wget
+  r-base
 
 # Clone MXNet repo and move into it
 RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet && \
@@ -20,6 +18,9 @@ RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet 
   cp make/config.mk config.mk && \
 # Set OpenBLAS
   sed -i 's/USE_BLAS = blas/USE_BLAS = openblas/g' config.mk && \
+# Set CUDA flag
+  sed -i 's/USE_CUDA = 0/USE_CUDA = 1/g' config.mk && \
+  sed -i 's/USE_CUDA_PATH = NONE/USE_CUDA_PATH = \/usr\/local\/cuda/g' config.mk && \
 # Make 
   make -j"$(nproc)"
 
