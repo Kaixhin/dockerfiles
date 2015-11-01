@@ -15,6 +15,7 @@ Some builds based on certain software have builds that are triggered on schedule
 - [Caffe](https://github.com/BVLC/caffe)
 - [DIGITS](https://github.com/NVIDIA/DIGITS)
 - [FGLab](https://github.com/Kaixhin/FGLab)/[FGMachine](https://github.com/Kaixhin/FGMachine)
+- [Keras](https://github.com/fchollet/keras)
 - [Lasagne](https://github.com/Lasagne/Lasagne)
 - [MXNet](https://github.com/dmlc/mxnet)
 - [neon](https://github.com/NervanaSystems/neon)
