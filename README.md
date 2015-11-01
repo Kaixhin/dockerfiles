@@ -19,6 +19,7 @@ Some builds based on certain software have builds that are triggered on schedule
 - [Lasagne](https://github.com/Lasagne/Lasagne)
 - [MXNet](https://github.com/dmlc/mxnet)
 - [neon](https://github.com/NervanaSystems/neon)
+- [Pylearn2](https://github.com/lisa-lab/pylearn2)
 - [Spearmint](https://github.com/HIPS/Spearmint)
 - [Theano](https://github.com/Theano/Theano)
 - [Torch](https://github.com/torch/distro)
