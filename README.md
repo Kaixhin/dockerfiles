@@ -12,6 +12,7 @@ Up-to-date builds
 
 Some builds based on certain software have builds that are triggered on schedule via a cron script to stay up to date on a weekly basis. These are:
 
+- [Brainstorm](https://github.com/IDSIA/brainstorm)
 - [Caffe](https://github.com/BVLC/caffe)
 - [DIGITS](https://github.com/NVIDIA/DIGITS)
 - [FGLab](https://github.com/Kaixhin/FGLab)/[FGMachine](https://github.com/Kaixhin/FGMachine)
