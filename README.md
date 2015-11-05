@@ -1,11 +1,11 @@
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Kaixhin/dockerfiles/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
 dockerfiles
 ===========
 
 Compilation of Dockerfiles with automated builds enabled on the [Docker Hub](https://hub.docker.com/u/kaixhin/). **Not suitable for production environments.** These images are under continuous development, so breaking changes may be introduced.
 
-All images are based on Ubuntu Core 14.04 LTS, built with minimising size/layers and [best practices](https://docs.docker.com/articles/dockerfile_best-practices/) in mind. Dependencies are indicated left to right e.g. cuda-vnc is VNC built on top of CUDA. Explicit dependencies are excluded. CUDA images can be used without NVIDIA devices attached, but will obviously lack the ability to use CUDA capabilities.
+Nearly all images are based on Ubuntu Core 14.04 LTS, built with minimising size/layers and [best practices](https://docs.docker.com/articles/dockerfile_best-practices/) in mind. Dependencies are indicated left to right e.g. cuda-vnc is VNC built on top of CUDA. Explicit dependencies are excluded. CUDA images can be used without NVIDIA devices attached, but will obviously lack the ability to use CUDA capabilities.
 
 Up-to-date builds
 -----------------
@@ -52,6 +52,8 @@ Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). All
 
 The container must have all NVIDIA devices attached to it for CUDA to work properly. Therefore the command will be as such: `docker run -it --device /dev/nvidiactl --device /dev/nvidia-uvm --device /dev/nvidia0 kaixhin/cuda`. With 4 GPUs this would also have to include `--device /dev/nvidia1 --device /dev/nvidia2 --device /dev/nvidia3`.
 
+NVIDIA now has an [experimental project](https://github.com/NVIDIA/nvidia-docker) which relies on a wrapper script to improve the usage of CUDA Docker containers. This is an alternative, but not a replacement, for this project.
+
 Helpers
 -------
 
@@ -87,4 +89,4 @@ Some Dockerfiles have been modified from the work of others. The source for thes
 Citation
 --------
 
-If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
+If you find this useful in research please consider [citing this work](CITATION.md).
