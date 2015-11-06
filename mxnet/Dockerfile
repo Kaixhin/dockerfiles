@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
   python-dev \
   python-numpy \
   python-setuptools \
-  r-base \
   wget
 
 # Clone MXNet repo and move into it
@@ -19,22 +18,20 @@ RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet 
 # Copy config.mk
   cp make/config.mk config.mk && \
 # Set OpenBLAS
-  sed -i 's/USE_BLAS = blas/USE_BLAS = openblas/g' config.mk && \
+  sed -i 's/USE_BLAS = atlas/USE_BLAS = openblas/g' config.mk && \
 # Make 
   make -j"$(nproc)"
 
 # Install Python package
 RUN cd /root/mxnet/python && python setup.py install
 
-# Install R dependencies
-RUN cd /opt && \
-  # Download Rcpp
-  wget https://cran.r-project.org/src/contrib/Rcpp_0.12.1.tar.gz && \
-  # Install Rcpp
-  R CMD INSTALL Rcpp_0.12.1.tar.gz
+# Add R to apt sources
+RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
+# Install latest version of R
+RUN apt-get update && apt-get install -y --force-yes r-base
 
 # Install R package
-RUN cd /root/mxnet && R CMD INSTALL R-package
+# TODO
 
 # Set ~/mxnet as working directory
 WORKDIR /root/mxnet
