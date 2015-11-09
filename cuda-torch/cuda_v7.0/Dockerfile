@@ -7,8 +7,22 @@ RUN apt-get update && apt-get install -y \
   curl \
   ipython3 \
   python-zmq
+
 # Run Torch7 installation scripts
 RUN curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
+
+# Set up ENV for MAGMA
+ENV CUDADIR=/usr/local/cuda \
+  OPENBLASDIR=/opt/OpenBLAS
+# Clone MAGMA repo and move into it
+RUN cd /root && git clone https://github.com/maxhutch/magma.git && cd magma && \
+# Make MAGMA with OpenBLAS (installed as a Torch dep)
+  mv make.inc.openblas make.inc && \
+  make -j"$(nproc)" && \
+# Install
+  make install -j"$(nproc)"
+
+# Continue Torch7 installation scripts
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive
 RUN cd ~/torch; ./install.sh
 
