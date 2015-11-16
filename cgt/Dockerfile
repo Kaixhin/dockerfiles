@@ -20,7 +20,7 @@ RUN cd /root && git clone https://github.com/joschu/cgt && cd cgt && \
   make -j"$(nproc)"
 
 # Add to Python path
-ENV PYTHONPATH=/path/to/cgt:/path/to/cgt/build/lib:$PYTHONPATH
+ENV PYTHONPATH=/root/cgt:/root/cgt/build/lib:$PYTHONPATH
 
 # Set ~/cgt as working directory
 WORKDIR /root/cgt
