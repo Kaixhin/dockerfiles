@@ -26,6 +26,8 @@ For automatically mapping a VNC port use `docker run -dP <nvidia_devices> kaixhi
 For specifying the port manually use `docker run -d -p <port>:5901 <nvidia_devices> kaixhin/cuda-vnc`.
 The shell can be entered as usual using `docker run -it <nvidia_devices> kaixhin/cuda-vnc bash`.
 
+For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
+
 Citation
 --------
 If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).

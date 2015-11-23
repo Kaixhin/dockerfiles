@@ -48,11 +48,11 @@ The container also needs to have `lxc` installed.
 CUDA
 ----
 
-Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). All images that rely on CUDA have a CUDA 7.5 version, unless specified otherwise, with the "latest" tag on the Docker Hub (an additional "7.5" tag will be available once [issue #341](https://github.com/docker/hub-feedback/issues/341) is sorted). Some images also have CUDA 7.0 and 6.5 versions, with the "7.0" and "6.5" tags on the Docker Hub. The host must have the corresponding CUDA drivers (v352.39 for CUDA 7.5, v346.46 for CUDA 7.0, v340.29 for CUDA 6.5) installed for the kernel module. For a discussion of driver versions please see [issue #1](https://github.com/Kaixhin/dockerfiles/issues/1).
+Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). All images that rely on CUDA have a CUDA 7.5 version, unless specified otherwise, with the "latest" tag on the Docker Hub (an additional "7.5" tag will be available once [issue #341](https://github.com/docker/hub-feedback/issues/341) is sorted). Some images also have CUDA 7.0 and 6.5 versions, with the "7.0" and "6.5" tags on the Docker Hub. The host must have the corresponding CUDA drivers (v352.39 for CUDA 7.5, v346.46 for CUDA 7.0, v340.29 for CUDA 6.5) installed for the kernel module. For a discussion of driver versions please see [issue #1](https://github.com/Kaixhin/dockerfiles/issues/1). The recommended way to get these driver versions is to use the `.run` installers.
 
 The container must have all NVIDIA devices attached to it for CUDA to work properly. Therefore the command will be as such: `docker run -it --device /dev/nvidiactl --device /dev/nvidia-uvm --device /dev/nvidia0 kaixhin/cuda`. With 4 GPUs this would also have to include `--device /dev/nvidia1 --device /dev/nvidia2 --device /dev/nvidia3`.
 
-NVIDIA now has an [experimental project](https://github.com/NVIDIA/nvidia-docker) which relies on a wrapper script to improve the usage of CUDA Docker containers. This is an alternative, but not a replacement, for this project.
+NVIDIA now has an [experimental project](https://github.com/NVIDIA/nvidia-docker) which relies on a wrapper script to improve the usage of CUDA Docker containers. This is an alternative, but currently not a replacement, for this project. `kaixhin/cuda` will be deprecated once the official version is ready.
 
 Helpers
 -------

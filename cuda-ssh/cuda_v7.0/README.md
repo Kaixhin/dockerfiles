@@ -28,6 +28,8 @@ The shell can be entered as usual using `docker run -it <nvidia_devices> kaixhin
 
 The NVIDIA Visual Profiler (`nvvp`) can be accessed with an X client, after having run ssh with the `-X` flag.
 
+For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
+
 Citation
 --------
 If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).

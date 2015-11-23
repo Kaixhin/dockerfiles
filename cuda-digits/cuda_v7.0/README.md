@@ -20,6 +20,8 @@ For automatically mapping the DIGITS server port use `docker run -dP <nvidia_dev
 For specifying the port manually use `docker run -d -p <port>:8080 <nvidia_devices> kaixhin/cuda-digits`.
 The shell can be entered as usual using `docker run -it <nvidia_devices> kaixhin/cuda-digits bash`.
 
+For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
+
 Citation
 --------
 If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).

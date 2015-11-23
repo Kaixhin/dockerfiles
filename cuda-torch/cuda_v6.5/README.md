@@ -19,6 +19,8 @@ With 4 GPUs this would also have to include `--device /dev/nvidia1 --device /dev
 Torch is started interactively using `docker run -it <nvidia_devices> kaixhin/cuda-torch`.
 The shell can be entered as usual using `docker run -it <nvidia_devices> kaixhin/cuda-torch bash`.
 
+For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
+
 Citation
 --------
 If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
