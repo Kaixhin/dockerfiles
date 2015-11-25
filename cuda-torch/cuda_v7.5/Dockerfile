@@ -22,6 +22,3 @@ ENV LUA_PATH='/root/.luarocks/share/lua/5.1/?.lua;/root/.luarocks/share/lua/5.1/
   PATH=/root/torch/install/bin:$PATH \
   LD_LIBRARY_PATH=/root/torch/install/lib:$LD_LIBRARY_PATH \
   DYLD_LIBRARY_PATH=/root/torch/install/lib:$DYLD_LIBRARY_PATH
-
-# Run Torch7 interactively
-CMD ["/root/torch/install/bin/th"]
