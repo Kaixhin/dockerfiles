@@ -3,7 +3,7 @@
 
 cuda-digits
 ===========
-Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [Pycaffe](http://caffe.berkeleyvision.org/) (NVIDIA fork) + [DIGITS](https://developer.nvidia.com/digits).
+Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [Caffe](http://caffe.berkeleyvision.org/) (NVIDIA fork) + [DIGITS](https://developer.nvidia.com/digits).
 
 Requirements
 ------------
@@ -17,7 +17,7 @@ Therefore the command will be as such: `docker run -dP --device /dev/nvidiactl -
 With 4 GPUs this would also have to include `--device /dev/nvidia1 --device /dev/nvidia2 --device /dev/nvidia3`.
 
 For automatically mapping the DIGITS server port use `docker run -dP <nvidia_devices> kaixhin/cuda-digits` and `docker port <id>` to retrieve the port.
-For specifying the port manually use `docker run -d -p <port>:8080 <nvidia_devices> kaixhin/cuda-digits`.
+For specifying the port manually use `docker run -d -p <port>:34448 <nvidia_devices> kaixhin/cuda-digits`.
 The shell can be entered as usual using `docker run -it <nvidia_devices> kaixhin/cuda-digits bash`.
 
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).

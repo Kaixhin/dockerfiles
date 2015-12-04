@@ -2,53 +2,47 @@
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install git, bc and dependencies
+# Install git, bc, cmake and dependencies
 RUN apt-get update && apt-get install -y \
   git \
   bc \
-  libatlas-base-dev \
-  libatlas-dev \
-  libboost-all-dev \
-  libopencv-dev \
-  libprotobuf-dev \
-  libgoogle-glog-dev \
+  cmake \
   libgflags-dev \
-  protobuf-compiler \
-  libhdf5-dev \
+  libgoogle-glog-dev \
+  libopencv-dev \
   libleveldb-dev \
-  liblmdb-dev \
   libsnappy-dev \
+  liblmdb-dev \
+  libhdf5-serial-dev \
+  libprotobuf-dev \
+  protobuf-compiler \
+  libatlas-base-dev \
+  python-dev \
   python-pip \
+  python-numpy \
   gfortran
+# Install boost
+RUN apt-get install -y --no-install-recommends libboost-all-dev
 
 # Clone NVIDIA Caffe repo and move into it
-RUN cd /root && git clone --branch caffe-0.12 https://github.com/NVIDIA/caffe.git && cd caffe && \
+RUN cd /root && git clone --branch caffe-0.14 https://github.com/NVIDIA/caffe.git && cd caffe && \
 # Install python dependencies
-  cd python && \
-  for req in $(cat requirements.txt); do pip install $req; done && \
-  cd .. && \
-# Copy Makefile
-  cp Makefile.config.example Makefile.config && \
-# Disable cuDNN
-  sed -i 's/USE_CUDNN/# USE_CUDNN/g' Makefile.config && \
-# Enable CPU-only
-  sed -i 's/# CPU_ONLY/CPU_ONLY/g' Makefile.config && \
+  cat python/requirements.txt | xargs -n1 pip install && \
+# Make and move into build directory
+  mkdir build && cd build && \
+# CMake
+  cmake .. && \
 # Make
-  make -j"$(nproc)" all && \
-  make -j"$(nproc)" py
-# Set environment variable
+  make -j"$(nproc)"
+# Set CAFFE_HOME
 ENV CAFFE_HOME /root/caffe
 
-# Clone DIGITS and move into it
+# Clone DIGITS repo and move into it
 RUN cd /root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digits && \
-# Install dependencies
-  apt-get install -y graphviz gunicorn && \
-# Install python dependencies
-  for req in $(cat requirements.txt); do pip install $req; done
+# pip install
+  pip install -r requirements.txt
 
 # Expose server port
-EXPOSE 8080
-# Set ~/digits as working directory
-WORKDIR /root/digits
+EXPOSE 34448
 # Start server
 CMD ["/root/digits/digits-server"]
