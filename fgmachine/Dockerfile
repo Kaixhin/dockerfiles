@@ -15,4 +15,4 @@ EXPOSE 5081
 # Set working directory
 WORKDIR /root/FGMachine
 # Start server
-ENTRYPOINT ["npm”, “start”]
+ENTRYPOINT ["npm", "machine"]

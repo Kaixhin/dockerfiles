@@ -14,4 +14,4 @@ EXPOSE 5080
 # Set working directory
 WORKDIR /root/FGLab
 # Start server
-ENTRYPOINT ["npm”, “start”]
+ENTRYPOINT ["node", "lab"]
