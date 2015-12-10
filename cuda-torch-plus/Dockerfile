@@ -2,6 +2,15 @@
 FROM kaixhin/cuda-torch
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
+# Install NCCL for multi-GPU communication
+RUN cd /root && git clone https://github.com/NVIDIA/nccl.git && cd nccl && \
+  make CUDA_HOME=/usr/local/cuda
+
+# Install latest versions of nn, cutorch and cunn
+RUN luarocks install nn && \
+  luarocks install cutorch && \
+  luarocks install cunn
+
 # Move cuDNN over and extract
 ADD cudnn*.tgz /root/
 # Install cuDNN
@@ -14,6 +23,9 @@ RUN cd /root/cuda && \
 # Install cjson
 RUN luarocks install lua-cjson
 
+# Install ffmpeg dependencies
+RUN add-apt-repository ppa:mc3man/trusty-media && \
+  apt-get update && apt-get install -y ffmpeg
 # Install ffmpeg
 RUN luarocks install ffmpeg
 
@@ -59,4 +71,4 @@ RUN luarocks install inn
 #RUN luarocks install https://raw.githubusercontent.com/tkocisky/oxnn/master/oxnn-scm-1.rockspec
 
 # Install stn
-#RUN luarocks install https://raw.githubusercontent.com/qassemoquab/stnbhwd/master/stnbhwd-scm-1.rockspec
+RUN luarocks install https://raw.githubusercontent.com/qassemoquab/stnbhwd/master/stnbhwd-scm-1.rockspec

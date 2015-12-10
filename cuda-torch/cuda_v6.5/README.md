@@ -16,9 +16,6 @@ The container must have all NVIDIA devices attached to it for CUDA to work prope
 Therefore the command will be as such: `docker run -it --device /dev/nvidiactl --device /dev/nvidia-uvm --device /dev/nvidia0 kaixhin/cuda-torch`.
 With 4 GPUs this would also have to include `--device /dev/nvidia1 --device /dev/nvidia2 --device /dev/nvidia3`.
 
-Torch is started interactively using `docker run -it <nvidia_devices> kaixhin/cuda-torch`.
-The shell can be entered as usual using `docker run -it <nvidia_devices> kaixhin/cuda-torch bash`.
-
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
 
 Citation
