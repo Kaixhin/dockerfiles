@@ -3,15 +3,15 @@ cuda-torch-plus
 Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v2 RC3](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Installs the latest versions of `nn`, `cutorch`, and `cunn`. Includes the following additional packages:
 
 - [cjson](https://github.com/mpx/lua-cjson)
-- cudnn
+- [cudnn](https://github.com/soumith/cudnn.torch)
 - [dp](https://github.com/nicolas-leonard/dp)
 - [dpnn](https://github.com/nicolas-leonard/dpnn)
 - [ffmpeg](https://github.com/clementfarabet/lua---ffmpeg)
 - [imagine-nn](https://github.com/szagoruyko/imagine-nn)
 - [loadcaffe](https://github.com/szagoruyko/loadcaffe)
 - [LuaSocket](https://github.com/diegonehab/luasocket)
+- [nccl](https://github.com/ngimel/nccl.torch)
 - [nninit](https://github.com/Kaixhin/nninit)
-- [oxnn](https://github.com/tkocisky/oxnn)
 - [parallel](https://github.com/clementfarabet/lua---parallel)
 - [rnn](https://github.com/Element-Research/rnn)
 - [stn](https://github.com/qassemoquab/stnbhwd)
