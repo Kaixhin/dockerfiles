@@ -3,7 +3,7 @@
 
 cuda-caffe
 ==========
-Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [Caffe](http://caffe.berkeleyvision.org/).
+Ubuntu Core 14.04 + [CUDA 7.0.28](http://www.nvidia.com/object/cuda_home_new.html) + [Caffe](http://caffe.berkeleyvision.org/). Includes Python interface.
 
 Requirements
 ------------

@@ -26,6 +26,9 @@ RUN luarocks install nccl
 # Install cjson
 RUN luarocks install lua-cjson
 
+# Install LogRoll
+RUN luarocks install logroll
+
 # Install ffmpeg dependencies
 RUN add-apt-repository ppa:mc3man/trusty-media && \
   apt-get update && apt-get install -y ffmpeg

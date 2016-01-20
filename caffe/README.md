@@ -3,7 +3,7 @@
 
 caffe
 =====
-Ubuntu Core 14.04 + [Caffe](http://caffe.berkeleyvision.org/).
+Ubuntu Core 14.04 + [Caffe](http://caffe.berkeleyvision.org/). Includes Python interface.
 
 Citation
 --------

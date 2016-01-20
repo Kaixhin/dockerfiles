@@ -9,6 +9,7 @@ Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.htm
 - [ffmpeg](https://github.com/clementfarabet/lua---ffmpeg)
 - [imagine-nn](https://github.com/szagoruyko/imagine-nn)
 - [loadcaffe](https://github.com/szagoruyko/loadcaffe)
+- [logroll](https://github.com/rosejn/logroll)
 - [LuaSocket](https://github.com/diegonehab/luasocket)
 - [nccl](https://github.com/ngimel/nccl.torch)
 - [nninit](https://github.com/Kaixhin/nninit)
