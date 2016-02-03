@@ -8,17 +8,8 @@ RUN apt-get update && apt-get install -y \
   ipython3 \
   python-zmq
 
-# Install cuDNN
-RUN CUDA_REPO_PKG=cuda-repo-ubuntu1404_7.5-18_amd64.deb && \
-  wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/$CUDA_REPO_PKG && \
-  dpkg -i $CUDA_REPO_PKG && \
-  ML_REPO_PKG=nvidia-machine-learning-repo_4.0-2_amd64.deb && \
-  wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/$ML_REPO_PKG && \
-  dpkg -i $ML_REPO_PKG && \
-  apt-get update && apt-get install -yqq libcudnn4
-
 # Run Torch7 installation scripts
-RUN curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
+RUN curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash > /dev/null
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive
 RUN cd ~/torch; ./install.sh
 

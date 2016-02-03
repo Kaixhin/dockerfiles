@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
   python-zmq
 
 # Run Torch7 installation scripts
-RUN curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
+RUN curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash > /dev/null
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive
 RUN cd ~/torch; ./install.sh
 
