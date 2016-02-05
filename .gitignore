@@ -1,3 +1,2 @@
 # Ignore cuDNN
-cuda-torch-plus/cudnn*
 cudnn-digits/cudnn*

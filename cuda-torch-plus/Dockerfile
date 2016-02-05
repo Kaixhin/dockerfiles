@@ -7,14 +7,20 @@ RUN luarocks install nn && \
   luarocks install cutorch && \
   luarocks install cunn
 
-# Move cuDNN over and extract
-ADD cudnn*.tgz /root/
-# Install cuDNN
-RUN cd /root/cuda && \
-  cp include/*.h /usr/local/cuda/include/ && \
-  cp --preserve=links lib64/*.so* /usr/local/cuda/lib64/ && \
-  cp lib64/*.a /usr/local/cuda/lib64/ && \
-  luarocks install cudnn
+# Install CUDA repo (needed for cuDNN)
+ENV CUDA_REPO_PKG=cuda-repo-ubuntu1404_7.5-18_amd64.deb
+RUN wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/$CUDA_REPO_PKG && \
+  dpkg -i $CUDA_REPO_PKG
+
+# Install cuDNN v4
+ENV ML_REPO_PKG=nvidia-machine-learning-repo_4.0-2_amd64.deb
+RUN wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/$ML_REPO_PKG && \
+  dpkg -i $ML_REPO_PKG && \
+  apt-get update && apt-get install -y libcudnn4
+# Install Torch cuDNN bindings
+RUN cd /root && git clone https://github.com/soumith/cudnn.torch.git && cd cudnn.torch && \
+  git checkout R4 && \
+  luarocks make
 
 # Install NCCL for multi-GPU communication
 RUN cd /root && git clone https://github.com/NVIDIA/nccl.git && cd nccl && \
@@ -22,6 +28,12 @@ RUN cd /root && git clone https://github.com/NVIDIA/nccl.git && cd nccl && \
   make PREFIX=/root/nccl -j"$(nproc)" install
 ENV LD_LIBRARY_PATH=/root/nccl/lib:$LD_LIBRARY_PATH
 RUN luarocks install nccl
+
+# Install luaposix
+RUN luarocks install luaposix
+
+# Install Moses
+RUN luarocks install moses
 
 # Install cjson
 RUN luarocks install lua-cjson
@@ -41,6 +53,36 @@ RUN luarocks install luasocket
 # Install parallel
 RUN luarocks install parallel
 
+# Install IPC
+RUN luarocks install ipc
+
+# Install distlearn
+RUN luarocks install distlearn
+
+# Install classic
+RUN luarocks install classic
+
+# Install torchx
+RUN luarocks install torchx
+
+# Install autograd
+RUN luarocks install autograd
+
+# Install dataset
+RUN luarocks install dataset
+
+# Install dpnn
+RUN luarocks install dpnn
+
+# Install nninit
+RUN luarocks install nninit
+
+# Install nnquery
+RUN luarocks install https://raw.githubusercontent.com/bshillingford/nnquery/master/rocks/nnquery-scm-1.rockspec
+
+# Install rnn
+RUN luarocks install rnn
+
 # Install loadcaffe dependencies
 RUN apt-get install -y \
   libprotobuf-dev \
@@ -48,30 +90,19 @@ RUN apt-get install -y \
 # Install loadcaffe
 RUN luarocks install loadcaffe
 
-# Install torchx
-RUN luarocks install torchx
-
-# Install dpnn
-RUN luarocks install dpnn
-
-# Install dp
-RUN luarocks install dp
-
-# Install rnn
-RUN luarocks install rnn
-
-# Install nninit
-RUN luarocks install nninit
-
 # Install inn
 RUN luarocks install inn
 
 # Install stn
 RUN luarocks install https://raw.githubusercontent.com/qassemoquab/stnbhwd/master/stnbhwd-scm-1.rockspec
 
-# Install cuDNN
-#ENV ML_REPO_PKG=nvidia-machine-learning-repo_4.0-1_amd64.deb
-#RUN wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/$ML_REPO_PKG && \
-#dpkg -i $ML_REPO_PKG && \
-#apt-get update && apt-get install -y libcudnn4 && \
-#luarocks install cudnn
+# Reinforcement learning
+
+# Install xitari
+RUN luarocks install https://raw.githubusercontent.com/Kaixhin/xitari/master/xitari-0-0.rockspec
+
+# Install alewrap
+RUN luarocks install https://raw.githubusercontent.com/Kaixhin/alewrap/master/alewrap-0-0.rockspec
+
+# Install rlenvs
+RUN luarocks install https://raw.githubusercontent.com/Kaixhin/rlenvs/master/rocks/rlenvs-scm-1.rockspec

@@ -1,31 +1,36 @@
 cuda-torch-plus
 ===============
-Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v2 RC3](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Installs the latest versions of `nn`, `cutorch`, and `cunn`. Includes the following additional packages:
+Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v2 RC4](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Installs the latest versions of `nn`, `cutorch`, and `cunn`. Includes the following additional packages:
 
+- [alewrap](https://github.com/Kaixhin/alewrap)
+- [autograd](https://github.com/twitter/torch-autograd)
 - [cjson](https://github.com/mpx/lua-cjson)
+- [classic](https://github.com/deepmind/classic)
 - [cudnn](https://github.com/soumith/cudnn.torch)
-- [dp](https://github.com/nicolas-leonard/dp)
-- [dpnn](https://github.com/nicolas-leonard/dpnn)
+- [dataset](https://github.com/twitter/torch-dataset)
+- [distlearn](https://github.com/twitter/torch-distlearn)
+- [dpnn](https://github.com/Element-Research/dpnn)
 - [ffmpeg](https://github.com/clementfarabet/lua---ffmpeg)
 - [imagine-nn](https://github.com/szagoruyko/imagine-nn)
+- [ipc](https://github.com/twitter/torch-ipc)
 - [loadcaffe](https://github.com/szagoruyko/loadcaffe)
 - [logroll](https://github.com/rosejn/logroll)
 - [LuaSocket](https://github.com/diegonehab/luasocket)
+- [Moses](https://github.com/Yonaba/Moses)
 - [nccl](https://github.com/ngimel/nccl.torch)
 - [nninit](https://github.com/Kaixhin/nninit)
+- [nnquery](https://github.com/bshillingford/nnquery)
 - [parallel](https://github.com/clementfarabet/lua---parallel)
+- [rlenvs](https://github.com/Kaixhin/rlenvs)
 - [rnn](https://github.com/Element-Research/rnn)
 - [stn](https://github.com/qassemoquab/stnbhwd)
 - [torchx](https://github.com/nicolas-leonard/torchx)
+- [xitari](https://github.com/Kaixhin/xitari)
 
 Requirements
 ------------
 
 - Host with corresponding CUDA drivers (v. 352.39) installed for the kernel module.
-
-Build
------
-Include the cuDNN v3 archive.
 
 Usage
 -----
