@@ -1,6 +1,6 @@
 cuda-torch-plus
 ===============
-Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v2 RC4](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Installs the latest versions of `nn`, `cutorch`, and `cunn`. Includes the following additional packages:
+Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Installs the latest versions of `nn`, `cutorch`, and `cunn`. Includes the following additional packages:
 
 - [alewrap](https://github.com/Kaixhin/alewrap)
 - [autograd](https://github.com/twitter/torch-autograd)
