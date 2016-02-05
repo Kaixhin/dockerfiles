@@ -3,7 +3,7 @@
 
 cuda-keras
 ==========
-Ubuntu Core 14.04 + [CUDA 6.5.14](http://www.nvidia.com/object/cuda_home_new.html) + [Keras](http://keras.io/).
+Ubuntu Core 14.04 + [CUDA 6.5.14](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [Keras](http://keras.io/).
 
 Requirements
 ------------

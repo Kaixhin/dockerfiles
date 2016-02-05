@@ -3,7 +3,7 @@
 
 cuda-lasagne
 ============
-Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [Lasagne](http://lasagne.readthedocs.org/).
+Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [Lasagne](http://lasagne.readthedocs.org/).
 
 Requirements
 ------------

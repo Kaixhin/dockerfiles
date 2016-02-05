@@ -1,5 +1,5 @@
-# Start with CUDA base image
-FROM kaixhin/cuda:7.0
+# Start with cuDNN base image
+FROM kaixhin/cudnn:7.0
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git and other dependencies
@@ -20,6 +20,8 @@ RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet 
 # Set CUDA flag
   sed -i 's/USE_CUDA = 0/USE_CUDA = 1/g' config.mk && \
   sed -i 's/USE_CUDA_PATH = NONE/USE_CUDA_PATH = \/usr\/local\/cuda/g' config.mk && \
+# Set cuDNN flag
+  sed -i 's/USE_CUDNN = 0/USE_CUDNN = 1/g' config.mk && \
 # Make 
   make -j"$(nproc)"
 

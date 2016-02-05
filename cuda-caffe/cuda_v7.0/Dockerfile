@@ -1,5 +1,5 @@
-# Start with CUDA base image
-FROM kaixhin/cuda:7.0
+# Start with cuDNN base image
+FROM kaixhin/cudnn:7.0
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, bc and dependencies

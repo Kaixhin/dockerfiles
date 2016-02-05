@@ -3,7 +3,7 @@
 
 cuda-caffe
 ==========
-Ubuntu Core 14.04 + [CUDA 6.5.14](http://www.nvidia.com/object/cuda_home_new.html) + [MXNet](http://mxnet.rtfd.org/).
+Ubuntu Core 14.04 + [CUDA 6.5.14](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [MXNet](http://mxnet.rtfd.org/).
 
 Requirements
 ------------

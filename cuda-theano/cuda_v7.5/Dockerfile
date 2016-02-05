@@ -1,5 +1,5 @@
-# Start with CUDA base image
-FROM kaixhin/cuda:latest
+# Start with cuDNN base image
+FROM kaixhin/cudnn:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, python-dev, pip and other dependencies
