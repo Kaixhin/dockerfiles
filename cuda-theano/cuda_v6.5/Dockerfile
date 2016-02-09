@@ -17,4 +17,4 @@ ENV CUDA_ROOT /usr/local/cuda/bin
 # Install bleeding-edge Theano
 RUN pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 # Set up .theanorc for CUDA
-RUN echo "[global]\ndevice=gpu\nfloatX=float32\n[nvcc]\nfastmath=True" > /root/.theanorc
+RUN echo "[global]\ndevice=gpu\nfloatX=float32\n[lib]\ncnmem=True\n[nvcc]\nfastmath=True" > /root/.theanorc
