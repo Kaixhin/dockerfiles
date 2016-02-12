@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM kaixhin/cudnn:latest
+FROM kaixhin/cuda:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git and other dependencies
