@@ -9,7 +9,6 @@ Requirements
 ------------
 
 - Host with corresponding CUDA drivers (v. 346.46) installed for the kernel module.
-- Maxwell GPU architecture.
 
 Usage
 -----
