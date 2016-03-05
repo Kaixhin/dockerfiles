@@ -2,9 +2,10 @@
 FROM kaixhin/cudnn:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install curl and dependencies for iTorch
+# Install curl, apt-add-repository and dependencies for iTorch
 RUN apt-get update && apt-get install -y \
   curl \
+  software-properties-common \
   ipython3 \
   python-zmq
 
