@@ -34,8 +34,7 @@ RUN cd /root && git clone https://github.com/BVLC/caffe.git && cd caffe && \
   cmake .. && \
 # Make
   make -j"$(nproc)" all && \
-  make install && \
-  make symlink
+  make install
 
 # Add to Python path
 ENV PYTHONPATH=/root/caffe/python:$PYTHONPATH
