@@ -19,7 +19,7 @@ RUN cd /root && git clone https://github.com/NervanaSystems/maxas.git && cd maxa
   perl Makefile.PL && \
 # Make
   make -j"$(nproc)" && \
-  make -j"$(nproc)" install
+  make install
 
 # Clone NervanaGPU repo and move into it
 RUN cd /root && git clone https://github.com/NervanaSystems/nervanagpu.git && cd nervanagpu && \
@@ -31,6 +31,6 @@ RUN cd /root && git clone https://github.com/NervanaSystems/neon.git && cd neon 
 # Enable nervanagpu
   sed -i 's/GPU = 0/GPU = nervanagpu/g' setup.cfg && \
 # Make
-  make -j"$(nproc)" install
+  make install
 # Set ~/neon as working directory
 WORKDIR /root/neon

@@ -25,7 +25,7 @@ RUN cd /root && git clone https://github.com/soumith/cudnn.torch.git && cd cudnn
 # Install NCCL for multi-GPU communication
 RUN cd /root && git clone https://github.com/NVIDIA/nccl.git && cd nccl && \
   make CUDA_HOME=/usr/local/cuda -j"$(nproc)" && \
-  make PREFIX=/root/nccl -j"$(nproc)" install
+  make PREFIX=/root/nccl install
 ENV LD_LIBRARY_PATH=/root/nccl/lib:$LD_LIBRARY_PATH
 RUN luarocks install nccl
 

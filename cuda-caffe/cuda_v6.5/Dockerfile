@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
   python-dev \
   python-pip \
   python-numpy \
-  gfortran
+  gfortran > /dev/null
 
 # Clone Caffe repo and move into it
 RUN cd /root && git clone https://github.com/BVLC/caffe.git && cd caffe && \
@@ -33,7 +33,9 @@ RUN cd /root && git clone https://github.com/BVLC/caffe.git && cd caffe && \
 # CMake
   cmake .. && \
 # Make
-  make -j"$(nproc)" all
+  make -j"$(nproc)" all && \
+  make install && \
+  make symlink
 
 # Add to Python path
 ENV PYTHONPATH=/root/caffe/python:$PYTHONPATH
