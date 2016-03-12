@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
   git \
   software-properties-common \
   ipython3 \
+  libssl-dev \
+  libzmq3-dev \
   python-zmq
 
 # Run Torch7 installation scripts
