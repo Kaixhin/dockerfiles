@@ -11,4 +11,4 @@ RUN wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_
 ENV ML_REPO_PKG=nvidia-machine-learning-repo_4.0-2_amd64.deb
 RUN wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/$ML_REPO_PKG && \
   dpkg -i $ML_REPO_PKG && \
-  apt-get update && apt-get install -y libcudnn4
+  apt-get update && apt-get install -y libcudnn4 libcudnn4-dev
