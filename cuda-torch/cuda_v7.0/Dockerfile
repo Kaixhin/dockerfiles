@@ -9,7 +9,11 @@ RUN apt-get update && apt-get install -y \
   ipython3 \
   libssl-dev \
   libzmq3-dev \
-  python-zmq
+  python-zmq \
+  python-pip
+
+# Install Jupyter Notebook for iTorch
+RUN pip install notebook
 
 # Run Torch7 installation scripts
 RUN git clone https://github.com/torch/distro.git /root/torch --recursive && cd /root/torch && \

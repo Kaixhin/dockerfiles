@@ -18,6 +18,8 @@ With 4 GPUs this would also have to include `--device /dev/nvidia1 --device /dev
 
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
 
+To use Jupyter/iTorch open up the appropriate port. For example, use `docker run -it -p 8888:8888 <nvidia_devices> kaixhin/cuda-torch`. Then run `jupyter notebook --ip="*" --no-browser` to open a notebook on `localhost:8888`.
+
 Citation
 --------
 If you find this useful in research please consider [citing this work](https://github.com/Kaixhin/dockerfiles/blob/master/CITATION.md).
