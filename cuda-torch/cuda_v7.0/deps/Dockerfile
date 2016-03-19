@@ -17,4 +17,4 @@ RUN pip install notebook
 
 # Run Torch7 installation scripts (dependencies only)
 RUN git clone https://github.com/torch/distro.git /root/torch --recursive && cd /root/torch && \
-  bash install-deps > /dev/null
+  bash install-deps
