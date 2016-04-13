@@ -43,6 +43,6 @@ RUN cd /root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digi
   pip install -r requirements.txt
 
 # Expose server port
-EXPOSE 34448
+EXPOSE 5000
 # Start server
-CMD ["/root/digits/digits-server"]
+CMD ["/root/digits/digits-devserver"]
