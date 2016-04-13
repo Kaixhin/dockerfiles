@@ -7,11 +7,17 @@ RUN apt-get update && apt-get install -y \
   git \
   software-properties-common \
   ipython3 \
-  python-zmq
+  libssl-dev \
+  libzmq3-dev \
+  python-zmq \
+  python-pip
+
+# Install Jupyter Notebook for iTorch
+RUN pip install notebook ipywidgets
 
 # Run Torch7 installation scripts
 RUN git clone https://github.com/torch/distro.git /root/torch --recursive && cd /root/torch && \
-  bash install-deps > /dev/null && \
+  bash install-deps && \
   ./install.sh
 
 # Set ~/torch as working directory
