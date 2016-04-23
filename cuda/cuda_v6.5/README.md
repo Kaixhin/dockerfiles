@@ -3,6 +3,8 @@
 
 cuda
 ====
+**DEPRECATED:** Please use [NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker).
+
 Ubuntu Core 14.04 + [CUDA 6.5.14](http://www.nvidia.com/object/cuda_home_new.html).
 
 Requirements
