@@ -1,6 +1,6 @@
 cuda-torch-plus
 ===============
-Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Installs the latest versions of `nn`, `cutorch`, and `cunn`. Includes the following additional packages:
+Ubuntu Core 14.04 + [CUDA 7.5](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Installs the latest versions of `nn`, `cutorch`, and `cunn`. Includes the following additional packages:
 
 - [alewrap](https://github.com/Kaixhin/alewrap)
 - [autograd](https://github.com/twitter/torch-autograd)
@@ -30,15 +30,15 @@ Ubuntu Core 14.04 + [CUDA 7.5.18](http://www.nvidia.com/object/cuda_home_new.htm
 Requirements
 ------------
 
-- Host with corresponding CUDA drivers (v. 352.39) installed for the kernel module.
+- [NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) - see [requirements](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements) for more details.
 
 Usage
 -----
-The container must have all NVIDIA devices attached to it for CUDA to work properly.
-Therefore the command will be as such: `docker run -it --device /dev/nvidiactl --device /dev/nvidia-uvm --device /dev/nvidia0 kaixhin/cuda-torch-plus`.
-With 4 GPUs this would also have to include `--device /dev/nvidia1 --device /dev/nvidia2 --device /dev/nvidia3`.
+With the NVIDIA Docker plugin running, the command will be as such: ``docker run -it `curl -s localhost:3476/docker/cli` kaixhin/cuda-torch``.
 
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
+
+To use Jupyter/iTorch open up the appropriate port. For example, use ``docker run -it -p 8888:8888 `curl -s localhost:3476/docker/cli` kaixhin/cuda-torch``. Then run `jupyter notebook --ip="0.0.0.0" --no-browser` to open a notebook on `localhost:8888`.
 
 Citation
 --------
