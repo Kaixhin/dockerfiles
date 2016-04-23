@@ -1,5 +1,5 @@
 # Start with CUDA base image
-FROM kaixhin/cuda:latest
+FROM nvidia/cuda:7.5-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install build-essential, git, python-dev, pip and other dependencies

@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM kaixhin/cudnn:7.0
+FROM nvidia/cuda:7.0-cudnn4-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, python-dev, pip and other dependencies
