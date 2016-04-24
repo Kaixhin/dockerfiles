@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
   git \
   libhdf5-dev \
   python-dev \
+  python-numpy \
   python-pip
 
 # Upgrade six
