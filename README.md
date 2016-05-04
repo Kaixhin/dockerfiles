@@ -51,7 +51,7 @@ Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). All
 
 These images need to be run on an Ubuntu host OS with [NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) installed. Specifically, `nvidia-docker-plugin` must be [installed](https://github.com/NVIDIA/nvidia-docker#plugin-install-recommended). The driver requirements can be found on the [NVIDIA Docker wiki](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements).
 
-`kaixhin/cuda` and `kaixhin/cudnn` have now been **deprecated** in favour of the official solution.
+`kaixhin/cuda` and `kaixhin/cudnn` have now been **deprecated** in favour of the official solution. These can be found on the [`legacy-cuda` branch](https://github.com/Kaixhin/dockerfiles/tree/legacy-cuda).
 
 Helpers
 -------
