@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM nvidia/cuda:7.0-cudnn4-devel
+FROM nvidia/cuda:7.0-cudnn5-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, bc, cmake and dependencies
