@@ -2,6 +2,9 @@
 FROM kaixhin/cuda:7.0
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
+# Add NVIDIA Docker information
+LABEL com.nvidia.cudnn.version="4"
+
 # Install CUDA repo (needed for cuDNN)
 ENV CUDA_REPO_PKG=cuda-repo-ubuntu1404_7.0-28_amd64.deb
 RUN wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/$CUDA_REPO_PKG && \

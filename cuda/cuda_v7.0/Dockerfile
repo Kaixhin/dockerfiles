@@ -2,6 +2,10 @@
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
+# Add NVIDIA Docker information
+LABEL com.nvidia.volumes.needed="nvidia_driver"
+LABEL com.nvidia.cuda.version="7.0"
+
 # Install wget and build-essential
 RUN apt-get update && apt-get install -y \
   build-essential \
