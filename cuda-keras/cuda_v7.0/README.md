@@ -12,7 +12,7 @@ Requirements
 
 Usage
 -----
-With the NVIDIA Docker plugin running, the command will be as such: ``docker run -it `curl -s localhost:3476/docker/cli` kaixhin/cuda-keras``.
+Use NVIDIA Docker: ``nvidia-docker run -it kaixhin/cuda-keras``.
 
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
 

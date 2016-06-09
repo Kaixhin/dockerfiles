@@ -16,13 +16,13 @@ Include password.txt with the password for TightVNC (by default this is "passwor
 
 Usage
 -----
-With the NVIDIA Docker plugin running, the command will be as such: ``docker run -dP `curl -s localhost:3476/docker/cli` kaixhin/cuda-vnc``.
+Use NVIDIA Docker: ``nvidia-docker run -dP kaixhin/cuda-vnc``.
 
 The default password should be changed. To do so start up a container and then run `docker exec <id> bash -c "echo -e '<password>\n<password>\nn' | vncpasswd"`.
 
-For automatically mapping a VNC port use ``docker run -dP `curl -s localhost:3476/docker/cli` kaixhin/cuda-vnc`` and `docker port <id>` to retrieve the port.
-For specifying the port manually use ``docker run -d -p <port>:5901 `curl -s localhost:3476/docker/cli` kaixhin/cuda-vnc``.
-The shell can be entered as usual using ``docker run -it `curl -s localhost:3476/docker/cli` kaixhin/cuda-vnc bash``.
+For automatically mapping a VNC port use ``nvidia-docker run -dP kaixhin/cuda-vnc`` and `docker port <id>` to retrieve the port.
+For specifying the port manually use ``nvidia-docker run -d -p <port>:5901 kaixhin/cuda-vnc``.
+The shell can be entered as usual using ``nvidia-docker run -it kaixhin/cuda-vnc bash``.
 
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
 

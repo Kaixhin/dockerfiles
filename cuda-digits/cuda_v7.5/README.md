@@ -12,11 +12,11 @@ Requirements
 
 Usage
 -----
-With the NVIDIA Docker plugin running, the command will be as such: ``docker run -dP `curl -s localhost:3476/docker/cli` kaixhin/cuda-digits``.
+Use NVIDIA Docker: ``nvidia-docker run -dP kaixhin/cuda-digits``.
 
-For automatically mapping the DIGITS server port use ``docker run -dP `curl -s localhost:3476/docker/cli` kaixhin/cuda-digits`` and `docker port <id>` to retrieve the port.
-For specifying the port manually use ``docker run -d -p <port>:5000 `curl -s localhost:3476/docker/cli` kaixhin/cuda-digits``.
-The shell can be entered as usual using ``docker run -it `curl -s localhost:3476/docker/cli` kaixhin/cuda-digits bash``.
+For automatically mapping the DIGITS server port use ``nvidia-docker run -dP kaixhin/cuda-digits`` and `docker port <id>` to retrieve the port.
+For specifying the port manually use ``nvidia-docker run -d -p <port>:5000 kaixhin/cuda-digits``.
+The shell can be entered as usual using ``nvidia-docker run -it kaixhin/cuda-digits bash``.
 
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
 

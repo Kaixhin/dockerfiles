@@ -16,13 +16,13 @@ Include password.txt with the password for sshd (by default this is "password").
 
 Usage
 -----
-With the NVIDIA Docker plugin running, the command will be as such: ``docker run -dP `curl -s localhost:3476/docker/cli` kaixhin/cuda-ssh``.
+Use NVIDIA Docker: ``nvidia-docker run -dP kaixhin/cuda-ssh``.
 
 The default password should be changed. To do so start up a container and then run `docker exec <id> bash -c "echo 'root:<password>' | chpasswd"`.
 
-For automatically mapping a SSH port use ``docker run -dP `curl -s localhost:3476/docker/cli` kaixhin/cuda-ssh`` and `docker port <id>` to retrieve the port.
-For specifying the port manually use ``docker run -d -p <port>:22 `curl -s localhost:3476/docker/cli` kaixhin/cuda-ssh``.
-The shell can be entered as usual using ``docker run -it `curl -s localhost:3476/docker/cli` kaixhin/cuda-ssh bash``.
+For automatically mapping a SSH port use ``nvidia-docker run -dP kaixhin/cuda-ssh`` and `docker port <id>` to retrieve the port.
+For specifying the port manually use ``nvidia-docker run -d -p <port>:22 kaixhin/cuda-ssh``.
+The shell can be entered as usual using ``nvidia-docker run -it kaixhin/cuda-ssh bash``.
 
 The NVIDIA Visual Profiler (`nvvp`) can be accessed with an X client, after having run ssh with the `-X` flag.
 
