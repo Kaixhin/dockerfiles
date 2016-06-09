@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM kaixhin/cudnn:6.5
+FROM nvidia/cuda:6.5-cudnn5-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, apt-add-repository and dependencies for iTorch

@@ -1,5 +1,5 @@
 # Start with CUDA base image
-FROM kaixhin/cuda:7.0
+FROM nvidia/cuda:7.0-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install LXDE, VNC server and Firefox
