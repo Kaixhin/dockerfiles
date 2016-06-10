@@ -1,9 +1,9 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-mxnet.svg)](https://hub.docker.com/r/kaixhin/cuda-mxnet/)
 [![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-mxnet.svg)](https://hub.docker.com/r/kaixhin/cuda-mxnet/)
 
-cuda-caffe
+cuda-mxnet
 ==========
-Ubuntu Core 14.04 + [CUDA 6.5](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [MXNet](http://mxnet.rtfd.org/).
+Ubuntu Core 14.04 + [CUDA 6.5](http://www.nvidia.com/object/cuda_home_new.html) + [MXNet](http://mxnet.rtfd.org/).
 
 Requirements
 ------------

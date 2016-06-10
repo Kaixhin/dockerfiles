@@ -3,7 +3,7 @@
 
 cuda-pylearn2
 =============
-Ubuntu Core 14.04 + [CUDA 6.5](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [Pylearn2](http://deeplearning.net/software/pylearn2/).
+Ubuntu Core 14.04 + [CUDA 6.5](http://www.nvidia.com/object/cuda_home_new.html) + [Pylearn2](http://deeplearning.net/software/pylearn2/).
 
 Requirements
 ------------

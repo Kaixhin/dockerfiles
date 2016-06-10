@@ -3,7 +3,7 @@
 
 cuda-theano
 ===========
-Ubuntu Core 14.04 + [CUDA 6.5](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v4](https://developer.nvidia.com/cuDNN) + [Theano](http://www.deeplearning.net/software/theano/).
+Ubuntu Core 14.04 + [CUDA 6.5](http://www.nvidia.com/object/cuda_home_new.html) + [Theano](http://www.deeplearning.net/software/theano/).
 
 Requirements
 ------------
