@@ -2,9 +2,10 @@
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install git, bc and dependencies
+# Install git, wget, bc and dependencies
 RUN apt-get update && apt-get install -y \
   git \
+  wget \
   bc \
   cmake \
   libatlas-base-dev \

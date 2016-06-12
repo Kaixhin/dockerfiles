@@ -2,9 +2,10 @@
 FROM nvidia/cuda:7.5-cudnn5-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install git, bc, cmake and dependencies
+# Install git, wget, bc, cmake and dependencies
 RUN apt-get update && apt-get install -y \
   git \
+  wget \
   bc \
   cmake \
   libgflags-dev \
