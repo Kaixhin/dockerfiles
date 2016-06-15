@@ -3,7 +3,7 @@
 
 sshx
 ====
-Ubuntu Core 14.04 + SSH server + X server.
+Ubuntu Core 16.04 + SSH server + X server.
 
 Usage
 -----

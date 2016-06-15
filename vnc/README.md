@@ -3,7 +3,7 @@
 
 vnc
 ===
-Ubuntu Core 14.04 + LXDE desktop + Firefox browser + TightVNC server. Runs as a daemon by default by using tail.
+Ubuntu Core 16.04 + LXDE desktop + Firefox browser + TightVNC server. Runs as a daemon by default by using tail.
 
 Build
 -----
