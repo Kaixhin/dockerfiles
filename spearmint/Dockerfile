@@ -1,5 +1,5 @@
 # Start with Ubuntu base image
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, MongoDB, pip and other dependencies

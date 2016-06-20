@@ -2,8 +2,8 @@
 FROM ubuntu:16.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install wget
-RUN apt-get update && apt-get install -y wget
+# Install wget and lsb-release
+RUN apt-get update && apt-get install -y wget lsb-release
 # Set up sources and keys
 RUN echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list && \
   apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-key 0xB01FA116
