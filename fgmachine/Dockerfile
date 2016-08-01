@@ -17,8 +17,6 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 581
 # Create NVIDIA Docker init file
 RUN touch /etc/init.d/nvidia-docker && \
   chmod +x /etc/init.d/nvidia-docker && \
-# Overwrite policy layer interface
-  echo "exit 0" > /usr/sbin/policy-rc.d && \
 # Install NVIDIA Docker
   wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.0-rc.3/nvidia-docker_1.0.0.rc.3-1_amd64.deb && \
   dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
