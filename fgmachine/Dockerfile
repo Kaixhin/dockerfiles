@@ -2,10 +2,11 @@
 FROM node
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install Docker dependencies and vim
+# Install Docker dependencies, pciutils (for lspci) and vim (for editing)
 RUN apt-get update && apt-get install -y \
   apt-transport-https \
   ca-certificates \
+  pciutils \
   vim
 # Add Docker GPG key
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
