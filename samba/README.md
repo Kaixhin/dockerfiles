@@ -3,7 +3,7 @@
 
 samba
 =====
-Ubuntu Core 16.04 + Samba server.
+Ubuntu Core 14.04 + Samba server.
 
 Build
 -----

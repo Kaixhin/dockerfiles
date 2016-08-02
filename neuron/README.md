@@ -3,7 +3,7 @@
 
 neuron
 ======
-Ubuntu Core 16.04 + LXDE desktop + Firefox browser + TightVNC server + [NEURON](http://www.neuron.yale.edu/neuron/). Runs as a daemon by default by using tail.
+Ubuntu Core 14.04 + LXDE desktop + Firefox browser + TightVNC server + [NEURON](http://www.neuron.yale.edu/neuron/). Runs as a daemon by default by using tail.
 
 Build
 -----

@@ -3,7 +3,7 @@
 
 vnc-ros
 =======
-Ubuntu Core 16.04 + LXDE desktop + Firefox browser + TightVNC server + [ROS Kinetic Desktop Full](http://www.ros.org/). Runs as a daemon by default by using tail.
+Ubuntu Core 14.04 + LXDE desktop + Firefox browser + TightVNC server + [ROS Jade Desktop Full](http://www.ros.org/). Runs as a daemon by default by using tail.
 
 Build
 -----

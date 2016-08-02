@@ -3,7 +3,7 @@
 
 ros
 ===
-Ubuntu Core 16.04 + [ROS Kinetic Base](http://www.ros.org/).
+Ubuntu Core 14.04 + [ROS Jade Base](http://www.ros.org/).
 
 Citation
 --------

@@ -3,7 +3,7 @@
 
 ssh
 ===
-Ubuntu Core 16.04 + SSH server.
+Ubuntu Core 14.04 + SSH server.
 
 Build
 -----
