@@ -3,7 +3,7 @@
 
 spearmint
 =========
-Ubuntu Core 16.04 + [Spearmint](https://github.com/HIPS/Spearmint).
+Ubuntu Core 14.04 + [Spearmint](https://github.com/HIPS/Spearmint).
 
 Citation
 --------
