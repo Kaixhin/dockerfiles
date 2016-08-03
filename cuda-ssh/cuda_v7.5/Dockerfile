@@ -22,5 +22,6 @@ EXPOSE 22
 # Add CUDA back to path during SSH
 RUN echo "export PATH=$PATH:/usr/local/cuda/bin" >> /etc/profile
 
-# Run SSH server without detaching
-CMD ["/usr/sbin/sshd", "-D"]
+# Copy SSH script to set up LD_LIBRARY_PATH
+COPY ssh.sh /opt/
+CMD ["/opt/ssh.sh"]
