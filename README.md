@@ -53,11 +53,6 @@ These images need to be run on an Ubuntu host OS with [NVIDIA Docker](https://gi
 
 `kaixhin/cuda` and `kaixhin/cudnn` have now been **deprecated** in favour of the official solution.
 
-Helpers
--------
-
-The scripts in this folder can provide extra functionality, e.g. SSH, to daemonised containers. Further details are available in the folder's readme.
-
 Migration
 ---------
 
