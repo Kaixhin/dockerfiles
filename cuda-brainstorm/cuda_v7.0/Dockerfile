@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
   python-numpy \
   python-pip
 
-# Upgrade six
-RUN pip install --upgrade six
+# Remove OS-installed six
+RUN rm /usr/lib/python2.7/dist-packages/six*
 
 # Clone Brainstorm repo and move into it
 RUN cd /root && git clone https://github.com/IDSIA/brainstorm.git && cd brainstorm && \
