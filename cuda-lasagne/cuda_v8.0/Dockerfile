@@ -1,5 +1,5 @@
 # Start with CUDA Theano base image
-FROM kaixhin/cuda-theano:7.5
+FROM kaixhin/cuda-theano:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install bleeding-edge Lasagne

@@ -1,5 +1,5 @@
 # Start with CUDA DIGITS dependencies
-FROM kaixhin/cuda-digits-deps:7.5
+FROM kaixhin/cuda-digits-deps:latest
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Move into NVIDIA Caffe repo
