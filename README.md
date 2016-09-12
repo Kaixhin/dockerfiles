@@ -34,11 +34,11 @@ docker run -it \ # Running interactively, but can be replaced with -d for daemon
   -e DISPLAY \ # Pass $DISPLAY
   -e QT_X11_NO_MITSHM=1 \ # Optional, can prevent issues with using root to run graphical applications
   -v=/tmp/.X11-unix:/tmp/.X11-unix \ # Pass X11 socket
-  --hostname=`hostname` \ # Easy access to the X11 server
+  --hostname=`hostname` \ # Prevent having to configure xhost
   <image>
 ```
 
-General information on running desktop applications with Docker can be found [in this blog post](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/). Using the host's hostname prevents having to configure `xhost`.
+General information on running desktop applications with Docker can be found [in this blog post](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/). For hardware acceleration, it is possible to use `nvidia-docker` (with an image built for NVIDIA Docker), although OpenGL is [not fully supported](https://github.com/NVIDIA/nvidia-docker/issues/11).
 
 Daemonising containers
 ----------------------
