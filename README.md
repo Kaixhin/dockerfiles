@@ -24,6 +24,22 @@ Some builds based on certain software have builds that are triggered on schedule
 - [Theano](https://github.com/Theano/Theano)
 - [Torch](https://github.com/torch/distro)
 
+Graphical applications
+----------------------
+
+Starting graphical (X11) applications is possible with the following commands:
+
+```
+docker run -it \ # Running interactively, but can be replaced with -d for daemons
+  -e DISPLAY \ # Pass $DISPLAY
+  -e QT_X11_NO_MITSHM=1 \ # Optional, can prevent issues with using root to run graphical applications
+  -v=/tmp/.X11-unix:/tmp/.X11-unix \ # Pass X11 socket
+  --hostname=`hostname` \ # Easy access to the X11 server
+  <image>
+```
+
+General information on running desktop applications with Docker can be found [in this blog post](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/). Using the host's hostname prevents having to configure `xhost`.
+
 Daemonising containers
 ----------------------
 
