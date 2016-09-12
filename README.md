@@ -32,8 +32,8 @@ Starting graphical (X11) applications is possible with the following commands:
 ```
 docker run -it \ # Running interactively, but can be replaced with -d for daemons
   -e DISPLAY \ # Pass $DISPLAY
-  -e QT_X11_NO_MITSHM=1 \ # Optional, can prevent issues with using root to run graphical applications
   -v=/tmp/.X11-unix:/tmp/.X11-unix \ # Pass X11 socket
+  --ipc=host \ # Allows MIT-SHM
   --hostname=`hostname` \ # Prevent having to configure xhost
   <image>
 ```
