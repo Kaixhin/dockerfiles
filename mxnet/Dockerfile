@@ -2,7 +2,7 @@
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install build-essential, git and other dependencies
+# Install build-essential, git, wget and other dependencies
 RUN apt-get update && apt-get install -y \
   build-essential \
   git \

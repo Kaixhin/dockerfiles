@@ -15,7 +15,7 @@ Some builds based on certain software have builds that are triggered on schedule
 - [Brainstorm](https://github.com/IDSIA/brainstorm)
 - [Caffe](https://github.com/BVLC/caffe)
 - [DIGITS](https://github.com/NVIDIA/DIGITS)
-- [FGLab/FGMachine](https://kaixhin.github.io/FGLab)
+- [FGLab](https://github.com/Kaixhin/FGLab)/[FGMachine](https://github.com/Kaixhin/FGMachine)
 - [Keras](https://github.com/fchollet/keras)
 - [Lasagne](https://github.com/Lasagne/Lasagne)
 - [MXNet](https://github.com/dmlc/mxnet)
@@ -23,6 +23,22 @@ Some builds based on certain software have builds that are triggered on schedule
 - [Pylearn2](https://github.com/lisa-lab/pylearn2)
 - [Theano](https://github.com/Theano/Theano)
 - [Torch](https://github.com/torch/distro)
+
+Graphical applications
+----------------------
+
+Starting graphical (X11) applications is possible with the following commands:
+
+```
+docker run -it \ # Running interactively, but can be replaced with -d for daemons
+  -e DISPLAY \ # Pass $DISPLAY
+  -v=/tmp/.X11-unix:/tmp/.X11-unix \ # Pass X11 socket
+  --ipc=host \ # Allows MIT-SHM
+  --hostname=`hostname` \ # Prevent having to configure xhost
+  <image>
+```
+
+General information on running desktop applications with Docker can be found [in this blog post](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/). For hardware acceleration, it is possible to use `nvidia-docker` (with an image built for NVIDIA Docker), although OpenGL is [not fully supported](https://github.com/NVIDIA/nvidia-docker/issues/11).
 
 Daemonising containers
 ----------------------
@@ -38,11 +54,9 @@ It is now possible to access the daemonised container, for example using bash:
 Sibling containers
 ------------------
 
-To start containers on the host from within a docker container, the following options should be used when running the container:
+To start containers on the host from within a docker container, the container requires `docker-engine` installed, with the same API version as the Docker daemon on the host. The Docker socket also needs to be mounted inside the container:
 
-`-v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):$(which docker)`
-
-The container also needs to have `lxc` installed.
+`-v /var/run/docker.sock:/var/run/docker.sock`
 
 CUDA
 ----
@@ -51,7 +65,10 @@ Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). All
 
 These images need to be run on an Ubuntu host OS with [NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) installed. The driver requirements can be found on the [NVIDIA Docker wiki](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements).
 
-`kaixhin/cuda` and `kaixhin/cudnn` have now been **deprecated** in favour of the official solution.
+Deprecated images
+-----------------
+
+`kaixhin/cuda` and `kaixhin/cudnn` have now been **deprecated** in favour of the official solution ([`nvidia/cuda`](https://hub.docker.com/r/nvidia/cuda/)).
 
 Migration
 ---------
