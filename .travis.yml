@@ -1,0 +1,12 @@
+sudo: required
+language: generic
+services:
+  - docker
+install:
+  - docker build -t kaixhin/samba samba
+  - docker run -itd -p 137-139:137-139 -p 445:445 --name samba kaixhin/samba
+script:
+  - docker ps | grep -q samba
+branches:
+  only:
+    - travis
