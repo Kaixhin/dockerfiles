@@ -2,14 +2,15 @@
 FROM nvidia/cuda:8.0-cudnn5-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install git and other dependencies
+# Install git, wget and other dependencies
 RUN apt-get update && apt-get install -y \
   git \
   libopenblas-dev \
   libopencv-dev \
   python-dev \
   python-numpy \
-  python-setuptools
+  python-setuptools \
+  wget
 
 # Clone MXNet repo and move into it
 RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet && \
