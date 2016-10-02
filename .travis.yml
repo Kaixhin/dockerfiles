@@ -3,10 +3,10 @@ language: generic
 services:
   - docker
 install:
-  - docker build -t kaixhin/cuda-torch cuda-torch/cuda_v7.5
-  - docker run -d --name cuda-torch kaixhin/cuda-torch sh -c "while true; do :; done"
+  - docker build -t kaixhin/samba samba
+  - docker run -itd -p 137-139:137-139 -p 445:445 --name samba kaixhin/samba
 script:
-  - docker ps | grep -q cuda-torch
+  - docker ps | grep -q samba
 branches:
   only:
     - travis
