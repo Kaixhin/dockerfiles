@@ -2,7 +2,7 @@
 FROM nvidia/cuda:7.0-cudnn4-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install git and other dependencies
+# Install git, wget and other dependencies
 RUN apt-get update && apt-get install -y \
   git \
   libopenblas-dev \
