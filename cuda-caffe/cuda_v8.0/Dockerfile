@@ -1,5 +1,5 @@
 # Start with CUDA Caffe dependencies
-FROM kaixhin/cuda-caffe-deps:latest
+FROM kaixhin/cuda-caffe-deps:8.0
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Move into Caffe repo

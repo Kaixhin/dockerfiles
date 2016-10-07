@@ -61,7 +61,7 @@ To start containers on the host from within a docker container, the container re
 CUDA
 ----
 
-Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). All images that rely on CUDA have a CUDA 8.0 version, unless specified otherwise, with the "latest" tag on the Docker Hub (an additional "8.0" tag will be available once [issue #341](https://github.com/docker/hub-feedback/issues/341) is sorted). Some images also have CUDA 7.5, 7.0 and 6.5 versions, with the "7.5", "7.0" and "6.5" tags on the Docker Hub.
+Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). These images are versioned with the corresponding tags, e.g. "8.0", "7.5", "7.0" and "6.5", on the Docker Hub.
 
 These images need to be run on an Ubuntu host OS with [NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) installed. The driver requirements can be found on the [NVIDIA Docker wiki](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements).
 

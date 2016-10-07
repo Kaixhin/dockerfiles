@@ -1,5 +1,5 @@
 # Start with CUDA Theano base image
-FROM kaixhin/cuda-theano:latest
+FROM kaixhin/cuda-theano:8.0
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install dependencies
