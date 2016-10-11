@@ -2,11 +2,13 @@
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install build-essential, git, wget, python-dev, pip and other dependencies
+# Install build-essential, git, wget, python-dev, pip, BLAS + LAPACK and other dependencies
 RUN apt-get update && apt-get install -y \
   build-essential \
+  gfortran \
   git \
   wget \
+  liblapack-dev \
   libopenblas-dev \
   python-dev \
   python-pip \

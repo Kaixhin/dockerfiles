@@ -2,10 +2,12 @@
 FROM nvidia/cuda:6.5-devel
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install git, wget, python-dev, pip and other dependencies
+# Install git, wget, python-dev, pip, BLAS + LAPACK and other dependencies
 RUN apt-get update && apt-get install -y \
+  gfortran \
   git \
   wget \
+  liblapack-dev \
   libopenblas-dev \
   python-dev \
   python-pip \
