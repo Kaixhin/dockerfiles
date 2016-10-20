@@ -26,6 +26,6 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y --no-install-recommends libboost-all-dev
 
 # Clone NVIDIA Caffe repo and move into it
-RUN cd /root && git clone --branch caffe-0.14 https://github.com/NVIDIA/caffe.git && cd caffe && \
+RUN cd /root && git clone https://github.com/NVIDIA/caffe.git && cd caffe && \
 # Install python dependencies
   cat python/requirements.txt | xargs -n1 pip install

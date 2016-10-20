@@ -20,5 +20,7 @@ RUN cd /root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digi
 
 # Expose server port
 EXPOSE 5000
+# Set working directory
+WORKDIR /root/digits
 # Start server
-CMD ["/root/digits/digits-devserver"]
+CMD ["./digits-devserver"]
