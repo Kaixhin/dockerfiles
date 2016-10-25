@@ -45,7 +45,7 @@ Daemonising containers
 
 Most containers run as a foreground process. To daemonise (in Docker terminology, detach) such a container it is possible to use:
 
-`docker run -d <image> sh -c "while true; do :; done"`
+`docker run -d <image> sh -c "while true; sleep 1; done"`
 
 It is now possible to access the daemonised container, for example using bash:
 
