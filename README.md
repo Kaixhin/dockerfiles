@@ -29,11 +29,11 @@ Graphical applications
 
 Starting graphical (X11) applications is possible with the following commands:
 
-```
-docker run -it \ # Running interactively, but can be replaced with -d for daemons
-  -e DISPLAY \ # Pass $DISPLAY
-  -v=/tmp/.X11-unix:/tmp/.X11-unix \ # Pass X11 socket
-  --ipc=host \ # Allows MIT-SHM
+```sh
+docker run -it `# Running interactively, but can be replaced with -d for daemons` \
+  -e DISPLAY `# Pass $DISPLAY` \
+  -v=/tmp/.X11-unix:/tmp/.X11-unix `# Pass X11 socket` \
+  --ipc=host `# Allows MIT-SHM` \
   <image>
 ```
 
@@ -41,9 +41,9 @@ General information on running desktop applications with Docker can be found [in
 
 On Mac OS X, use XQuartz and [allow connections from network clients](https://blogs.oracle.com/OracleWebCenterSuite/entry/running_gui_applications_on_docker). Then the following can be used:
 
-```
+```sh
 docker run -it \
-  -e DISPLAY=`ifconfig en0 | grep inet | awk '$1=="inet" {print $2}'`:0 \ # Use XQuartz network $DISPLAY
+  -e DISPLAY=`ifconfig en0 | grep inet | awk '$1=="inet" {print $2}'`:0 `# Use XQuartz network $DISPLAY` \
   --ipc=host \
   <image>
 ```
