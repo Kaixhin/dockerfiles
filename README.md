@@ -34,11 +34,19 @@ docker run -it \ # Running interactively, but can be replaced with -d for daemon
   -e DISPLAY \ # Pass $DISPLAY
   -v=/tmp/.X11-unix:/tmp/.X11-unix \ # Pass X11 socket
   --ipc=host \ # Allows MIT-SHM
-  --hostname=`hostname` \ # Prevent having to configure xhost
   <image>
 ```
 
-General information on running desktop applications with Docker can be found [in this blog post](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/). For hardware acceleration, it is possible to use `nvidia-docker` (with an image built for NVIDIA Docker), although OpenGL is [not fully supported](https://github.com/NVIDIA/nvidia-docker/issues/11).
+General information on running desktop applications with Docker can be found [in this blog post](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/). You probably will also need to configure the X server host (`xhost`) to [give access](http://wiki.ros.org/docker/Tutorials/GUI). For hardware acceleration on Linux, it is possible to use `nvidia-docker` (with an image built for NVIDIA Docker), although OpenGL is [not fully supported](https://github.com/NVIDIA/nvidia-docker/issues/11).
+
+On Mac OS X, use XQuartz and [allow connections from network clients](https://blogs.oracle.com/OracleWebCenterSuite/entry/running_gui_applications_on_docker). Then the following can be used:
+
+```
+docker run -it \
+  -e DISPLAY=`ifconfig en0 | grep inet | awk '$1=="inet" {print $2}'`:0 \ # Use XQuartz network $DISPLAY
+  --ipc=host \
+  <image>
+```
 
 Daemonising containers
 ----------------------
