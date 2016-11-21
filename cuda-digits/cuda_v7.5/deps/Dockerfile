@@ -30,6 +30,8 @@ RUN cd /root && git clone https://github.com/NVIDIA/nccl.git && cd nccl && \
   make CUDA_HOME=/usr/local/cuda -j"$(nproc)" && \
   make PREFIX=/root/nccl install
 ENV LD_LIBRARY_PATH=/root/nccl/lib:$LD_LIBRARY_PATH
+ENV NCCL_INCLUDE_DIR=/root/nccl/include
+ENV NCCL_LIBRARY=/root/nccl/lib
 
 # Clone NVIDIA Caffe repo and move into it
 RUN cd /root && git clone https://github.com/NVIDIA/caffe.git && cd caffe && \
