@@ -26,12 +26,12 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y --no-install-recommends libboost-all-dev
 
 # Install NCCL for multi-GPU communication
-RUN cd /root && git clone https://github.com/NVIDIA/nccl.git && cd nccl && \
-  make CUDA_HOME=/usr/local/cuda -j"$(nproc)" && \
-  make PREFIX=/root/nccl install
-ENV LD_LIBRARY_PATH=/root/nccl/lib:$LD_LIBRARY_PATH
-ENV NCCL_INCLUDE_DIR=/root/nccl/include
-ENV NCCL_LIBRARY=/root/nccl/lib
+RUN wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda7.5/libnccl1_1.2.3-1.cuda7.5_amd64.deb && \
+  dpkg -i libnccl1_1.2.3-1.cuda7.5_amd64.deb && \
+  rm libnccl1_1.2.3-1.cuda7.5_amd64.deb
+RUN wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda7.5/libnccl-dev_1.2.3-1.cuda7.5_amd64.deb && \
+  dpkg -i libnccl-dev_1.2.3-1.cuda7.5_amd64.deb && \
+  rm libnccl-dev_1.2.3-1.cuda7.5_amd64.deb
 
 # Clone NVIDIA Caffe repo and move into it
 RUN cd /root && git clone https://github.com/NVIDIA/caffe.git && cd caffe && \
