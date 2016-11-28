@@ -28,8 +28,8 @@ RUN apt-get update && apt-get install -y \
 # Install NCCL for multi-GPU communication
 RUN wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda8.0/libnccl1_1.2.3-1.cuda8.0_amd64.deb && \
   dpkg -i libnccl1_1.2.3-1.cuda8.0_amd64.deb && \
-  rm libnccl1_1.2.3-1.cuda8.0_amd64.deb
-RUN wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda8.0/libnccl-dev_1.2.3-1.cuda8.0_amd64.deb && \
+  rm libnccl1_1.2.3-1.cuda8.0_amd64.deb && \
+  wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda8.0/libnccl-dev_1.2.3-1.cuda8.0_amd64.deb && \
   dpkg -i libnccl-dev_1.2.3-1.cuda8.0_amd64.deb && \
   rm libnccl-dev_1.2.3-1.cuda8.0_amd64.deb
 

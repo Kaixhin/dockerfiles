@@ -26,10 +26,11 @@ RUN apt-get update && apt-get install -y \
   gfortran > /dev/null
 
 # Install NCCL for multi-GPU communication
-RUN wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda7.5/libnccl1_1.2.3-1.cuda7.5_amd64.deb && \
+RUN apt-get install -y cuda-ld-conf-7-5 && \
+  wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda7.5/libnccl1_1.2.3-1.cuda7.5_amd64.deb && \
   dpkg -i libnccl1_1.2.3-1.cuda7.5_amd64.deb && \
-  rm libnccl1_1.2.3-1.cuda7.5_amd64.deb
-RUN wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda7.5/libnccl-dev_1.2.3-1.cuda7.5_amd64.deb && \
+  rm libnccl1_1.2.3-1.cuda7.5_amd64.deb && \
+  wget https://github.com/NVIDIA/nccl/releases/download/v1.2.3-1%2Bcuda7.5/libnccl-dev_1.2.3-1.cuda7.5_amd64.deb && \
   dpkg -i libnccl-dev_1.2.3-1.cuda7.5_amd64.deb && \
   rm libnccl-dev_1.2.3-1.cuda7.5_amd64.deb
 
