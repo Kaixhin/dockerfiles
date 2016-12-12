@@ -26,14 +26,5 @@ RUN echo "[global]\ndevice=gpu\nfloatX=float32\noptimizer_including=cudnn\n[lib]
 RUN pip install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
 RUN pip install https://github.com/Lasagne/Lasagne/archive/master.zip
 # matplotlib
-WORKDIR /root
-RUN wget http://download.savannah.gnu.org/releases/freetype/freetype-2.5.5.tar.gz
-RUN tar xzvf freetype-2.5.5.tar.gz
-
-WORKDIR freetype-2.5.5
-RUN ./configure
-RUN make
-RUN make install
-
-RUN yum install -y libpng-devel
+RUN apt-get install libpng-dev libjpeg8-dev libfreetype6-dev
 RUN pip install matplotlib
