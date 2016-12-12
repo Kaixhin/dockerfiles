@@ -18,3 +18,4 @@ RUN apt-get update && apt-get install -y \
 
 # Install bleeding-edge Theano
 RUN pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+RUN pip install --upgrade six
