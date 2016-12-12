@@ -25,3 +25,7 @@ RUN echo "[global]\ndevice=gpu\nfloatX=float32\noptimizer_including=cudnn\n[lib]
 # Lasagne
 RUN pip install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
 RUN pip install https://github.com/Lasagne/Lasagne/archive/master.zip
+# matplotlib 
+RUN apt-get install -y libfreetype6 libfreetype6-dev
+RUN apt-get install -y python-imaging libpng-dev 
+RUN pip install matplotlib
