@@ -26,5 +26,5 @@ RUN echo "[global]\ndevice=gpu\nfloatX=float32\noptimizer_including=cudnn\n[lib]
 RUN pip install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
 RUN pip install https://github.com/Lasagne/Lasagne/archive/master.zip
 # matplotlib
-RUN apt-get install libpng-dev libjpeg8-dev libfreetype6-dev
+RUN apt-get install -y libpng-dev libjpeg8-dev libfreetype6-dev
 RUN pip install matplotlib
