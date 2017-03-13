@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
   libopencv-dev \
   python-dev \
   python-numpy \
+  python-pip \
   python-setuptools \
   wget
 
@@ -29,13 +30,11 @@ RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet 
 # Install Python package
 RUN cd /root/mxnet/python && python setup.py install
 
-# Add R to apt sources
-RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
-# Install latest version of R
-RUN apt-get update && apt-get install -y --force-yes r-base
+# Add to Python path
+RUN echo "export PYTHONPATH=$MXNET_HOME/python:$PYTHONPATH" >> /root/.bashrc
 
-# Install R package
-# TODO
+# Install graphviz and jupyter
+RUN pip install graphviz jupyter
 
 # Set ~/mxnet as working directory
 WORKDIR /root/mxnet
