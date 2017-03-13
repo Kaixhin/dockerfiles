@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
   libopencv-dev \
   python-dev \
   python-numpy \
-  python-pip \
   python-setuptools \
   wget
 
@@ -29,6 +28,8 @@ RUN cd /root/mxnet/python && python setup.py install
 # Add to Python path
 RUN echo "export PYTHONPATH=$MXNET_HOME/python:$PYTHONPATH" >> /root/.bashrc
 
+# Install pip
+RUN easy_install -U pip
 # Install graphviz and jupyter
 RUN pip install graphviz jupyter
 

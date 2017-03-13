@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
   libopencv-dev \
   python-dev \
   python-numpy \
-  python-pip \
   python-setuptools \
   wget
 
@@ -30,6 +29,8 @@ RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet 
 # Install Python package
 RUN cd /root/mxnet/python && python setup.py install
 
+# Install pip
+RUN easy_install -U pip
 # Add to Python path
 RUN echo "export PYTHONPATH=$MXNET_HOME/python:$PYTHONPATH" >> /root/.bashrc
 
