@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
   libssl-dev \
   libzmq3-dev \
   python-zmq \
-  python-pip
+  python-pip \
+  sudo
 
 # Install Jupyter Notebook for iTorch
 RUN pip install --upgrade pip notebook ipywidgets
