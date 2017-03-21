@@ -10,9 +10,6 @@ RUN apt-get update && apt-get install -y \
   python-matplotlib \
   python-yaml
 
-# Upgrade six
-RUN pip install --upgrade six
-
 # Clone Pylearn2 repo and move into it
 RUN cd /root && git clone https://github.com/lisa-lab/pylearn2.git && cd pylearn2 && \
   # Install
