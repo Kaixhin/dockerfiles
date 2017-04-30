@@ -3,7 +3,7 @@
 
 cuda-torch
 ==========
-Ubuntu Core 14.04 + [CUDA 8.0](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v5](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch).
+Ubuntu Core 14.04 + [CUDA 8.0](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v6](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch).
 
 Requirements
 ------------

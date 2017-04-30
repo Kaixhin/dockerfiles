@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu14.04
+FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, wget, python-dev, pip, BLAS + LAPACK and other dependencies
