@@ -1,5 +1,5 @@
 # Start with CUDA base image
-FROM nvidia/cuda:6.5-devel
+FROM nvidia/cuda:6.5-devel-ubuntu14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install build-essential, git, python-dev, pip and other dependencies

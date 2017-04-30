@@ -1,5 +1,5 @@
 # Start with CUDA base image
-FROM nvidia/cuda:7.5-devel
+FROM nvidia/cuda:7.5-devel-ubuntu14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install OpenSSH, X server and libgtk (for NVIDIA Visual Profiler)

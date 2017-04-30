@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM nvidia/cuda:7.5-cudnn5-devel
+FROM nvidia/cuda:7.5-cudnn5-devel-ubuntu14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, wget, bc, cmake and dependencies
