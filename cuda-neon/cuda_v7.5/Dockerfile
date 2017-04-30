@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
   libyaml-dev
 
 # Upgrade six
+RUN pip install --upgrade pip
 RUN pip install --upgrade six
 
 # Clone neon repo and move into it

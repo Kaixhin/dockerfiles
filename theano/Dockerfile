@@ -17,5 +17,6 @@ RUN apt-get update && apt-get install -y \
   python-scipy
 
 # Install bleeding-edge Theano
+RUN pip install --upgrade pip
+RUN pip install --upgrade six
 RUN pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
-RUN pip install --upgrade pip six
