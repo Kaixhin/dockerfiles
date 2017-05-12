@@ -18,7 +18,7 @@ RUN cd /root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digi
 # pip install
   pip install -r requirements.txt
 
-#Enable volumes for host persistence
+# Enable volumes for host persistence
 VOLUME /data
 VOLUME /jobs
 

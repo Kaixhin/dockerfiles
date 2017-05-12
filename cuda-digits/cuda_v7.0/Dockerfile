@@ -18,6 +18,13 @@ RUN cd /root && git clone https://github.com/NVIDIA/DIGITS.git digits && cd digi
 # pip install
   pip install -r requirements.txt
 
+# Enable volumes for host persistence
+VOLUME /data
+VOLUME /jobs
+
+ENV DIGITS_JOBS_DIR=/jobs
+ENV DIGITS_LOGFILE_FILENAME=/jobs/digits.log
+
 # Expose server port
 EXPOSE 5000
 # Set working directory
