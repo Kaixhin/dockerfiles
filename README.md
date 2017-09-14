@@ -7,6 +7,7 @@ Compilation of Dockerfiles with automated builds enabled on the [Docker Hub](htt
 
 Nearly all images are based on Ubuntu Core 14.04 LTS, built with minimising size/layers and [best practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) in mind. Dependencies are indicated left to right e.g. cuda-vnc is VNC built on top of CUDA. Explicit dependencies are excluded.
 
+<!--
 Up-to-date builds
 -----------------
 
@@ -23,6 +24,7 @@ Some builds based on certain software have builds that are triggered on schedule
 - [Pylearn2](https://github.com/lisa-lab/pylearn2)
 - [Theano](https://github.com/Theano/Theano)
 - [Torch](https://github.com/torch/distro)
+-->
 
 Graphical applications
 ----------------------
@@ -69,7 +71,7 @@ To start containers on the host from within a docker container, the container re
 CUDA
 ----
 
-Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). These images are versioned with the corresponding tags, e.g. "8.0", "7.5", "7.0" and "6.5", on the Docker Hub.
+Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). These images are versioned with the corresponding tags, e.g. "8.0", "7.5" and "7.0", on the Docker Hub.
 
 These images need to be run on an Ubuntu host OS with [NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) installed. The driver requirements can be found on the [NVIDIA Docker wiki](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements).
 
