@@ -3,7 +3,7 @@
 
 cuda-mxnet
 ==========
-Ubuntu Core 14.04 + [CUDA 7.5](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v5](https://developer.nvidia.com/cuDNN) + [MXNet](http://mxnet.rtfd.org/).
+Ubuntu Core 14.04 + [CUDA 7.5](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v5](https://developer.nvidia.com/cuDNN) + [MXNet](https://mxnet.incubator.apache.org/index.html).
 
 Requirements
 ------------

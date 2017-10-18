@@ -3,7 +3,7 @@
 
 mxnet
 =====
-Ubuntu Core 14.04 + [MXNet](http://mxnet.rtfd.org/).
+Ubuntu Core 14.04 + [MXNet](https://mxnet.incubator.apache.org/index.html).
 
 Citation
 --------

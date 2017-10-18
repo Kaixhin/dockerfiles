@@ -2,36 +2,26 @@
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install build-essential, git, wget and other dependencies
+# Install build-essential, git and other dependencies
 RUN apt-get update && apt-get install -y \
   build-essential \
   git \
+  graphviz \
+  liblapack-dev \
   libopenblas-dev \
   libopencv-dev \
   python-dev \
   python-numpy \
-  python-setuptools \
-  wget
+  python-pip \
+  python-setuptools
 
 # Clone MXNet repo and move into it
-RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet && \
-# Copy config.mk
-  cp make/config.mk config.mk && \
-# Set OpenBLAS
-  sed -i 's/USE_BLAS = atlas/USE_BLAS = openblas/g' config.mk && \
+RUN cd /root && git clone --recursive https://github.com/apache/incubator-mxnet.git mxnet --branch 0.11.0 && cd mxnet && \
 # Make 
-  make -j"$(nproc)"
+  make -j $(nproc) USE_OPENCV=1 USE_BLAS=openblas
 
 # Install Python package
 RUN cd /root/mxnet/python && python setup.py install
-
-# Add to Python path
-RUN echo "export PYTHONPATH=$MXNET_HOME/python:$PYTHONPATH" >> /root/.bashrc
-
-# Install pip
-RUN easy_install -U pip
-# Install graphviz and jupyter
-RUN pip install graphviz jupyter
 
 # Set ~/mxnet as working directory
 WORKDIR /root/mxnet
