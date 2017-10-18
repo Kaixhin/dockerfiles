@@ -2,7 +2,7 @@
 FROM ubuntu:14.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install build-essential, git and other dependencies
+# Install build-essential, git, wget and other dependencies
 RUN apt-get update && apt-get install -y \
   build-essential \
   git \
@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
   python-dev \
   python-numpy \
   python-pip \
-  python-setuptools
+  python-setuptools \
+  wget
 
 # Clone MXNet repo and move into it
 RUN cd /root && git clone --recursive https://github.com/apache/incubator-mxnet.git mxnet --branch 0.11.0 && cd mxnet && \
