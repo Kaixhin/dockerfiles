@@ -16,7 +16,7 @@ Use NVIDIA Docker: ``nvidia-docker run -it kaixhin/cuda-torch``.
 
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
 
-To use Jupyter/iTorch open up the appropriate port. For example, use ``nvidia-docker run -it -p 8888:8888 kaixhin/cuda-torch``. Then run `jupyter notebook --ip="0.0.0.0" --no-browser` to open a notebook on `localhost:8888`.
+To use Jupyter/iTorch open up the appropriate port. For example, use ``nvidia-docker run -it -p 8888:8888 kaixhin/cuda-torch``. Then run `jupyter notebook --ip="0.0.0.0" --no-browser --allow-root` to open a notebook on `localhost:8888`.
 
 Citation
 --------
