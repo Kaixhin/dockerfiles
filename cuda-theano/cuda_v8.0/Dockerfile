@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -y \
   python-numpy \
   python-scipy
 
+# Remove OS-installed six
+RUN rm /usr/lib/python2.7/dist-packages/six*
+
 # Set CUDA_ROOT
 ENV CUDA_ROOT /usr/local/cuda/bin
 

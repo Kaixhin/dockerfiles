@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install -y \
   python-numpy \
   python-scipy
 
+# Remove OS-installed six
+RUN rm /usr/lib/python2.7/dist-packages/six*
+
 # Install bleeding-edge Theano
 RUN pip install --upgrade pip
 RUN pip install --upgrade six

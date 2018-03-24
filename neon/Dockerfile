@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
   libopencv-dev \
   libyaml-dev
 
-# Upgrade six
+# Remove OS-installed six
+RUN rm /usr/lib/python2.7/dist-packages/six*
 RUN pip install --upgrade pip
 RUN pip install --upgrade six
 
