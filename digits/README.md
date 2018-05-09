@@ -3,7 +3,7 @@
 
 digits
 ======
-Ubuntu Core 14.04 + [Caffe](http://caffe.berkeleyvision.org/) (NVIDIA fork) + [DIGITS](https://developer.nvidia.com/digits) (CPU-only).
+Ubuntu Core 16.04 + [Caffe](http://caffe.berkeleyvision.org/) (NVIDIA fork) + [DIGITS](https://developer.nvidia.com/digits) (CPU-only).
 
 Usage
 -----
