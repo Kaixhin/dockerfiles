@@ -1,5 +1,5 @@
 # Start with CUDA base image
-FROM nvidia/cuda:9.2-devel-ubuntu16.04
+FROM nvidia/cuda:9.1-devel-ubuntu16.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install OpenSSH, X server and libgtk (for NVIDIA Visual Profiler)
