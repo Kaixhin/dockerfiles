@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
+FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, apt-add-repository and dependencies for iTorch
